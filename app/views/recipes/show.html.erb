@@ -1,0 +1,12 @@
+<h1 class='text-center'><%= @recipe.title %></h1>
+
+
+<div class='container'>
+  <h3>Ingredients:</h3>
+  <% @recipe.ingredients.each do |ingredient| %>
+    <p><%= ingredient.name %></p>
+  <% end %>
+  <h3>Instructions:</h3>
+  <p><%= @recipe.instruction %></p>
+  <%= link_to 'other recipes', :back %>
+</div>
