@@ -7,7 +7,7 @@
 </div> -->
 
 <form action='/recipes'>
-  <%= select_tag "ingredients", options_from_collection_for_select(
+  <%= select_tag "ingredients[]", options_from_collection_for_select(
     Ingredient.all, :id, :name),
     class: 'select2', multiple: 'multiple' %>
   <button type='submit'>Search</button>
