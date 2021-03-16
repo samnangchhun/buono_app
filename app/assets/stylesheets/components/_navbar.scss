@@ -13,7 +13,13 @@
 
   .navbar-icons {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    padding-top: 5%;
   }
 
+}
+
+.icon-profile {
+  padding-top: 10%;
+  padding-right: 10%;
 }

@@ -1,49 +1,18 @@
-<div class="index-container">
+<h2 class="">Results</h2>
 
-    <div class="icon-profile text-right">
-      <%= link_to recipes_path do %>
-        <i class="far fa-user"> </i>
-      <% end %>
-    </div>
-
-  <div class='text-center'>
-
-
-    <h1>Recipes</h1>
-    <h3>Select your ingridients</h3>
-
-    <div class="text-center">
-      <form>
-        <%= form_tag recipes_path, method: :get do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "searchbar-index",
-            placeholder: "Find a recipe"
-          %>
-          <%= submit_tag "Search", class: "search-btn" %>
-        <% end %>
-      </form>
-    </div>
-
-    <div class="flex_div">
-      <div class="recipe-cards-index">
-          <% @recipes.each do |recipe| %>
-          <div class='container text-center mb-3'>
-            <h1><%= recipe.title %></h1>
-            <p><%= recipe.instruction %></p>
-            <p>prep time: <%= recipe.cooking_time %></p>
+<div class='flex_div'>
+  <div>
+    <div class='cards mr-2 ml-2'>
+      <% @recipes.each do |recipe|%>
+        <div class="card-trip">
+            <img src="https://144f2a3a2f948f23fc61-ca525f0a2beaec3e91ca498facd51f15.ssl.cf3.rackcdn.com/uploads/food_portal_data/recipes/recipe/hero_article_image/4417/compressed_Meatlessfarm_Lasagne.jpg" />
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= link_to recipe.title, recipe_path(recipe.id) %></h2>
+            </div>
+            <p class="card-trip-time"><%= recipe.cooking_time %> min</p>
           </div>
-        <% end %>
       </div>
-    </div>
-
-    <div class="pop-cards">
-      <h3>Trending</h3>
-      <div class="popular-cards">
-        popular cards
-      </div>
-    </div>
-
+      <% end  %>
   </div>
-
 </div>
