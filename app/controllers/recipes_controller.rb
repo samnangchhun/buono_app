@@ -4,7 +4,7 @@ class RecipesController < ApplicationController
 
   def index
     if params[:ingredients].present?
-      @recipes = Recipe.joins(:recipe_ingredients).where(recipe_ingredients: { ingredient_id: params[:ingredients].to_i })
+      @recipes = Recipe.joins(:recipe_ingredients).where(recipe_ingredients: { ingredient_id: params[:ingredients]})
     else
       @recipes = Recipe.all
     end
