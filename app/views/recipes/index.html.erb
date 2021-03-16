@@ -1,10 +1,49 @@
-<h1 class='text-center'>Recipes</h1>
+<div class="index-container">
 
-<% @recipes.each do |recipe| %>
-  <div class='container text-center mb-3'>
-    <h1><%= recipe.title %></h1>
-    <p><%= recipe.instruction %></p>
-    <p>prep time: <%= recipe.cooking_time %></p>
+    <div class="icon-profile text-right">
+      <%= link_to recipes_path do %>
+        <i class="far fa-user"> </i>
+      <% end %>
+    </div>
+
+  <div class='text-center'>
+
+
+    <h1>Recipes</h1>
+    <h3>Select your ingridients</h3>
+
+    <div class="text-center">
+      <form>
+        <%= form_tag recipes_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "searchbar-index",
+            placeholder: "Find a recipe"
+          %>
+          <%= submit_tag "Search", class: "search-btn" %>
+        <% end %>
+      </form>
+    </div>
+
+    <div class="flex_div">
+      <div class="recipe-cards-index">
+          <% @recipes.each do |recipe| %>
+          <div class='container text-center mb-3'>
+            <h1><%= recipe.title %></h1>
+            <p><%= recipe.instruction %></p>
+            <p>prep time: <%= recipe.cooking_time %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="pop-cards">
+      <h3>Trending</h3>
+      <div class="popular-cards">
+        popular cards
+      </div>
+    </div>
+
   </div>
-<% end %>
 
+</div>
