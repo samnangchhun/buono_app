@@ -1,0 +1,10 @@
+<h1 class='text-center'>Recipes</h1>
+
+<% @recipes.each do |recipe| %>
+  <div class='container text-center mb-3'>
+    <h1><%= recipe.title %></h1>
+    <p><%= recipe.instruction %></p>
+    <p>prep time: <%= recipe.cooking_time %></p>
+  </div>
+<% end %>
+
