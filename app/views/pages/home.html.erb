@@ -1,10 +1,20 @@
 <div class="container-landingpage">
+
   <div class="background-form-top">
     <%= image_tag("form_top.svg") %>
   </div>
     <div class="background-form-bottom">
-    <%= image_tag("form_top.svg") %>
+    <%= image_tag("form_bottom.svg") %>
   </div>
-  <%= image_tag("logo/logo_big_white.png") %>
-  <p>Find me in app/views/pages/home.html.erb</p>
+  <p><%= image_tag("logo/logo_big_white.png") %></p>
+
+  <%= link_to "start cooking", recipes_path, class:"btn btn-ghost"%>
+
+  <div class="signup-login">
+    <a class="signup" href="#">Sign up</a>
+    <a class="login" href="#">Log in </a>
+  </div>
+
 </div>
+
+

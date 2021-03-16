@@ -4,5 +4,70 @@ body {
   width: 375px;
   height: 667px;
   position: relative;
+    p {
+    position: absolute;
+    left: 77px;
+    top: 250px;
+    }
+}
+// btn start to cook
+a {
+position: absolute;
+top: 370px;
+left: 30%;
 }
 
+
+.signup {
+position: absolute;
+top: 70%;
+left: 35%;
+text-decoration: none;
+color: white;
+font-size: 14px;
+font-family:'Poppins', sans-serif;
+font-weight: 300;
+}
+
+.login {
+position: absolute;
+top: 70%;
+left: 56%;
+text-decoration: none;
+color: white;
+font-size: 14px;
+font-family:'Poppins', sans-serif;
+font-weight: 300;
+}
+
+
+.signup-login a:after {
+background: none repeat scroll 0 0 transparent;
+bottom: 0;
+content: "";
+display: block;
+height: 2px;
+left: 50%;
+position: absolute;
+background: #9C77CA;
+transition: width 0.3s ease 0s, left 0.3s ease 0s;
+width: 0;
+}
+
+
+.signup-login  a:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+
+// background forms
+.background-form-bottom{
+  position:absolute;
+  top: 410px;
+}
+
+.background-form-top{
+  position:absolute;
+  left: 120px;
+}
