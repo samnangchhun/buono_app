@@ -1,0 +1,14 @@
+<!-- <div class='select2'>
+  <select class="form-control" multiple="multiple">
+    <#% Ingredient.all.each do |ingredient| %>
+      <option><#%= ingredient.name %></option>
+    <#% end %>
+  </select>
+</div> -->
+
+<form action='/recipes'>
+  <%= select_tag "ingredients", options_from_collection_for_select(
+    Ingredient.all, :id, :name),
+    class: 'select2', multiple: 'multiple' %>
+  <button type='submit'>Search</button>
+</form>
