@@ -1,7 +1,75 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+
+puts 'seeding 5 users...'
+
+User.create(email: 'fra@mail.com', password: '123456')
+User.create(email: 'mich@mail.com', password: '123456')
+User.create(email: 'sam@mail.com', password: '123456')
+User.create(email: 'edo@mail.com', password: '123456')
+User.create(email: 'lara@mail.com', password: '123456')
+
+puts 'users created'
+
+puts 'seeding 20 ingredients...'
+
+20.times do
+  Ingredient.create(name: Faker::Food.unique.ingredient)
+end
+
+puts 'ingredients created'
+
+puts 'seeding 10 recipes...'
+
+10.times do
+  Recipe.create(
+    title: Faker::Food.unique.dish,
+    instruction: Faker::Food.description,
+    cooking_time: rand(10..40)
+  )
+end
+
+puts 'recipes created'
+
+puts 'joining ingredients and recipe...'
+
+Recipe.all.each do |recipe|
+  ingredients = Ingredient.all.sample(rand(1..4))
+  ingredients.each do |ingredient|
+    RecipeIngredient.create(recipe: recipe, ingredient: ingredient)
+  end
+end
+
+puts 'joining done'
+
+puts 'seeding some reviews'
+
+Recipe.all[0..2].each_with_index do |recipe, index|
+  (index + 1).times do
+    Review.create(
+      rating: rand(1..5),
+      content: Faker::Restaurant.unique.review,
+      recipe: recipe,
+      user: User.all.sample
+    )
+  end
+end
+
+puts 'reviews done'
+
+puts 'seeding some bookmarks...'
+
+User.all[0..2].each_with_index do |user, index|
+  (index + 1).times do
+    bookmark = Bookmark.new(user: user, recipe: Recipe.all.sample)
+    until bookmark.save
+      bookmark.recipe = Recipe.all.sample
+    end
+  end
+end
+
+puts 'bookmarks done'
+
+
+puts 'seeds completed'
+
+
