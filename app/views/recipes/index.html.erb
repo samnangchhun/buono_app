@@ -1,10 +1,21 @@
-<h1 class='text-center'>Recipes</h1>
+<h2 class="">Results</h2>
 
-<div class='container text-center mb-3'>
-  <% @recipes.each do |recipe| %>
-    <h1><%= link_to recipe.title, recipe_path(recipe.id) %></h1>
-    <p><%= recipe.instruction %></p>
-    <p>prep time: <%= recipe.cooking_time %></p>
-  <% end %>
+<div class='flex_div'>
+  <div>
+    <div class='cards mr-2 ml-2'>
+      <% @recipes.each do |recipe|%>
+        <div class="card-trip">
+            <img src="https://144f2a3a2f948f23fc61-ca525f0a2beaec3e91ca498facd51f15.ssl.cf3.rackcdn.com/uploads/food_portal_data/recipes/recipe/hero_article_image/4417/compressed_Meatlessfarm_Lasagne.jpg" />
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= link_to recipe.title, recipe_path(recipe.id) %></h2>
+            </div>
+            <p class="card-trip-time"><%= recipe.cooking_time %> min</p>
+          </div>
+      </div>
+      <% end  %>
+    </div>
+  </div>
 </div>
 
+  <%= render 'shared/navbar' %>
