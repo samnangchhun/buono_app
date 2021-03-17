@@ -4,6 +4,16 @@ class Recipe < ApplicationRecord
   has_many :ingredients, through: :recipe_ingredients
   has_many :reviews
 
+
+  def rating_average
+    reviews = self.reviews
+    sum = 0
+    reviews.each do |review|
+      sum += review.rating
+    end
+    sum / reviews.length
+  end
+
   def self.match(ingredients)
     recipes = Recipe.joins(:recipe_ingredients).where(recipe_ingredients: { ingredient_id: ingredients })
     recipes = recipes.map { |recipe| recipe.id }
@@ -18,4 +28,5 @@ class Recipe < ApplicationRecord
     end.uniq
     priorities.sort_by { |hash| -hash[:matching_ingredients] }
   end
+  
 end
