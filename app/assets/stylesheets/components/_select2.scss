@@ -1,0 +1,25 @@
+.select2-container--default .select2-selection--multiple {
+  border-radius: 20px;
+  border: 0;
+}
+
+.select2-container--default.select2-container--focus .select2-selection--multiple{
+  border: 0;
+}
+
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+  border-radius: 14px;
+  border: 1px solid $purple;
+  background-color: transparent;
+  color: $purple;
+
+}
+
+
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+color: $purple;
+border-right: 1px solid $purple;
+
+}
