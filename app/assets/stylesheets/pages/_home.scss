@@ -1,22 +1,24 @@
 // Specific CSS for your home-page
-body {
-  background-color: #E0AC62;
-  width: 375px;
-  height: 667px;
-  position: relative;
-    p {
-    position: absolute;
-    left: 77px;
-    top: 250px;
-    }
-}
-// btn start to cook
-a {
-position: absolute;
-top: 370px;
-left: 30%;
+#logo {
+  position: absolute;
+  left: 77px;
+  top: 250px;
 }
 
+.landing-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+// btn start to cook
+.cta {
+  padding: 1em;
+  background-color: $purple;
+  border-radius: 2em;
+  color: white;
+  margin: 0 auto;
+  align-self: center;
+}
 
 .signup {
 position: absolute;
@@ -24,8 +26,6 @@ top: 70%;
 left: 35%;
 text-decoration: none;
 color: white;
-font-size: 14px;
-font-family:'Poppins', sans-serif;
 font-weight: 300;
 }
 

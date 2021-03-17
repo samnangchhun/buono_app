@@ -1,21 +1,20 @@
-<div class="container-landingpage">
-
+<div class="background">
   <div class="background-form-top">
     <%= image_tag("form_top.svg") %>
   </div>
     <div class="background-form-bottom">
     <%= image_tag("form_bottom.svg") %>
   </div>
-  <p><%= image_tag("logo/logo_big_white.png") %></p>
+  <div id="logo">
+    <%= image_tag("logo/logo_big_white.png") %>
+  </div>
+</div>
 
-  <%= link_to "start cooking", recipes_path, class:"btn btn-ghost"%>
+<div class="landing-content">
+  <%= link_to "start cooking", recipes_path, class:"cta button-cta"%>
 
   <div class="signup-login">
     <a class="signup" href="#">Sign up</a>
     <a class="login" href="#">Log in </a>
   </div>
-
 </div>
-
-
-
