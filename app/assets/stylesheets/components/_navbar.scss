@@ -19,7 +19,22 @@
 
 }
 
-.icon-profile {
-  padding-top: 10%;
-  padding-right: 10%;
+.navbar-top {
+  background-color: transparent;
+  padding: 1em 1.5em;
+  font-size: 18px;
+  .far {
+  color: #979797;
+  }
+}
+
+.navbar-top-back {
+  background-color: transparent;
+  padding: 1em 1.5em;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  i {
+    color: #979797;
+  }
 }
