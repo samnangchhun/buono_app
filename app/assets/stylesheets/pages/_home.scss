@@ -1,73 +1,79 @@
 // Specific CSS for your home-page
-#logo {
-  position: absolute;
-  left: 77px;
-  top: 250px;
+.background {
+background-image: asset-url('background.svg');
+position:absolute;
+left: 0;
+right: 0;
+bottom: 0;
+top: 0;
+background-repeat: no-repeat;
+background-size: cover;
+display:flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 }
 
-.landing-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center
-}
+
 // btn start to cook
 .cta {
   padding: 1em;
   background-color: $purple;
   border-radius: 2em;
   color: white;
-  margin: 0 auto;
-  align-self: center;
+  margin-top: 2em;
+}
+
+
+.signup-login {
+  padding-top: 2em;
 }
 
 .signup {
-position: absolute;
-top: 70%;
-left: 35%;
 text-decoration: none;
 color: white;
 font-weight: 300;
+font-size: 14px;
+margin-right: 1em;
 }
 
 .login {
-position: absolute;
-top: 70%;
-left: 56%;
 text-decoration: none;
 color: white;
-font-size: 14px;
-font-family:'Poppins', sans-serif;
 font-weight: 300;
+font-size: 14px;
+margin-left: 1em;
 }
 
 
-.signup-login a:after {
-background: none repeat scroll 0 0 transparent;
-bottom: 0;
-content: "";
-display: block;
-height: 2px;
-left: 50%;
-position: absolute;
-background: #9C77CA;
-transition: width 0.3s ease 0s, left 0.3s ease 0s;
-width: 0;
+.signup-login  a:hover {
+  text-decoration: none !important;
+  color: white;
 }
 
+.signup-login a {
+  position:relative;
+}
 
-.signup-login  a:hover:after {
-  width: 100%;
+.signup-login a::after{
+  content: attr(data-content);
+  position: absolute;
+  color: transparent;
+  bottom: 0;
   left: 0;
+  width: 100%;
+  height: 40%;
+  background-color: $purple;
+  z-index: -1;
+  animation: fadein 0.5s normal forwards ease-in-out;
+  animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  transition: 0.5s ease;
+}
+.signup-login a:hover::after{
+  bottom: 0;
+  left: -20px;
+  width: 100%;
+  height: 40%;
 }
 
-
-// background forms
-.background-form-bottom{
-  position:absolute;
-  top: 410px;
-}
-
-.background-form-top{
-  position:absolute;
-  left: 120px;
-}
