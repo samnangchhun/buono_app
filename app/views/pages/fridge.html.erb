@@ -1,14 +1,18 @@
-<!-- <div class='select2'>
-  <select class="form-control" multiple="multiple">
-    <#% Ingredient.all.each do |ingredient| %>
-      <option><#%= ingredient.name %></option>
-    <#% end %>
-  </select>
-</div> -->
 
-<form action='/recipes'>
-  <%= select_tag "ingredients[]", options_from_collection_for_select(
-    Ingredient.all, :id, :name),
-    class: 'select2', multiple: 'multiple' %>
-  <button type='submit'>Search</button>
-</form>
+<div class="fridge">
+  <div class="fridge-content">
+  <h1>Your fridge is empty </h1>
+  <form action='/recipes'>
+    <div class="search-bar-fridge">
+    <%= select_tag "ingredients[]", options_from_collection_for_select(
+      Ingredient.all, :id, :name),
+      class: 'select2', multiple: 'multiple' %>
+    <button class= "button-add" type='submit'><%= image_tag 'search.svg', class: "search-icon" %></i></button>
+    </div>
+  </form>
+  </div>
+  <div class="background-fridge">
+    <%= image_tag 'background_fridge.svg' %>
+  </div>
+</div>
+
