@@ -3,14 +3,35 @@
   <div class="navbar-container">
     <div class="navbar-icons">
         <%= link_to recipes_path do %>
-          <%= image_tag 'search.svg' %>
+          <% if current_page?(recipes_path) %>
+            <%= image_tag 'icons_purple/search_purple.svg' %>
+          <% else %>
+            <%= image_tag 'icons_orange/search_orange.svg' %>
+          <% end %>
         <% end %>
         <%= link_to fridge_path do %>
-          <%= image_tag 'fridge.svg' %>
+          <% if current_page?(fridge_path) %>
+            <%= image_tag 'icons_purple/fridge_purple.svg' %>
+          <% else %>
+            <%= image_tag 'icons_orange/fridge_orange.svg' %>
+          <% end %>
         <% end %>
         <%= link_to 'bookmarks_path' do %>
-          <%= image_tag 'bookmark.svg' %>
+          <% if current_page?(recipes_path) %>
+            <%= image_tag 'icons_purple/bookmark_purple.svg' %>
+          <% else %>
+            <%= image_tag 'icons_orange/bookmark_orange.svg' %>
+          <% end %>
         <% end %>
     </div>
   </div>
 </nav>
+
+
+
+
+
+
+
+
+
