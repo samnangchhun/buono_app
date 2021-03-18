@@ -1,0 +1,1 @@
+document.querySelector(`.bookmark-recipe[data-bookmark-id="<%= @recipe.id %>"]`).innerHTML = `<%= render partial: 'bookmarks/bookmark_icon', locals: { recipe: @recipe.id } %>`

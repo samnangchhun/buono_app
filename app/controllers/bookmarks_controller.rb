@@ -11,13 +11,18 @@ class BookmarksController < ApplicationController
     @bookmark.user = current_user
     @bookmark.recipe = @recipe
     @bookmark.save
-    redirect_to recipe_path(@recipe)
+    # redirect_to recipe_path(@recipe)
+    respond_to do |format|
+      format.js { render partial: "bookmarks/update_bookmark_card" }
+    end
   end
 
   def destroy
     @bookmark.destroy
-    redirect_to bookmarks_path
-    flash[:notice] = "Bookmark deleted"
+    # redirect_to bookmarks_path
+    respond_to do |format|
+      format.js { render partial: "bookmarks/update_bookmark_card" }
+    end
   end
 
   private

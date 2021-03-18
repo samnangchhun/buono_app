@@ -15,6 +15,7 @@ class RecipesController < ApplicationController
   def show
     @recipes = Recipe.all.limit(2)
     # @recipes = Recipe.joins(:recipe_ingredients).where(recipe_ingredients: { ingredient_id: @recipes.ingredients.first.id })
+    console
   end
 
   # def new

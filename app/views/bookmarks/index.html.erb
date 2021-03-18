@@ -25,7 +25,7 @@
             <h2><%= link_to recipe.title, recipe_path(recipe.id) %></h2>
           </div>
           <p class="card-trip-time"><%= recipe.cooking_time %> min</p>
-          <%= link_to "destroy", bookmark_path(bookmark), method: :delete %>
+          <%= render  'bookmark_icon', locals: { recipe: recipe.id } %>
         </div>
       </div>
     <% end %>
