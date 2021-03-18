@@ -5,12 +5,15 @@
       <div class="cooking_time">
         <%= @recipe.cooking_time %> min
       </div>
+      <div class="bookmark-recipe">
+        <%= image_tag 'bookmark-white.svg' %>
+      </div>
   </div>
 
   <div class='ingridients-container'>
-    <div class="d-flex" style="justify-content: space-between; color: orange;">
-    <h1><%= @recipe.title %>  </h1>
-      <div class="rating-star">
+    <div class="d-flex" style="justify-content: space-between; color: #E0AC62;">
+    <h1> <%= @recipe.title %> </h1>
+      <div class="rating-star" style="padding-top: 1.3%;">
         <% if @recipe.reviews.empty? %>
                Be the first to review
             <% else %>
@@ -22,14 +25,16 @@
                   <i class="far fa-star"></i>
                 <% end %>
               <% end %>
-            <% end %>
+        <% end %>
       </div>
     </div>
 
-      <h6>Ingredients:</h6>
+    <h6>Ingredients:</h6>
+    <div class="ingredient-text">
       <% @recipe.ingredients.each do |ingredient| %>
         <%= ingredient.name %>
       <% end %>
+    </div>
   </div>
 
   <div class='instructions-container'>
@@ -37,10 +42,11 @@
     <p><%= @recipe.instruction %></p>
   </div>
 
-     <div class="page">
-      <%= link_to 'other recipes', :back %>
+    <div class="page">
+    <%#= link_to 'other recipes', :back %>
     </div>
   <div class="others-container">
+    <h3> Other suggestions</h3>
       <% @recipes.each do %>
     <div class="img-recipe-suggestion">
       <img src="https://assets.bonappetit.com/photos/57ae32871b33404414975b7c/1:1/w_2560%2Cc_limit/rigatoni-with-spicy-calabrese-style-pork-ragu.jpg">
