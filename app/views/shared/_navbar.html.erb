@@ -16,8 +16,8 @@
             <%= image_tag 'icons_orange/fridge_orange.svg' %>
           <% end %>
         <% end %>
-        <%= link_to 'bookmarks_path' do %>
-          <% if current_page?(recipes_path) %>
+        <%= link_to bookmarks_path do %>
+          <% if current_page?(bookmarks_path) %>
             <%= image_tag 'icons_purple/bookmark_purple.svg' %>
           <% else %>
             <%= image_tag 'icons_orange/bookmark_orange.svg' %>
