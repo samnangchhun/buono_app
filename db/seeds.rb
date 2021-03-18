@@ -72,4 +72,18 @@ puts 'bookmarks done'
 
 puts 'seeds completed'
 
+# RECIPES SEEDS
 
+Parser.recipes.each do |recipe|
+  Recipe.create(title: recipe['title'], instruction: recipe['instruction']) # ADD COOKING TIME
+  # recipe = Recipe.new
+  # recipe.title = rec['title']
+  # recipe.instruction = rec['instruction']
+  # recipe.cooking_time = rec[]
+end
+
+# INGREDIENTS SEEDS
+
+Parser.ingredients['ingredients'].each do |ingredient|
+  Ingredient.create(name: ingredient['name']) # ADD IMAGE
+end
