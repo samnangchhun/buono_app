@@ -5,9 +5,10 @@
       <div class="cooking_time">
         <%= @recipe.cooking_time %> min
       </div>
-      <div class="bookmark-recipe">
-        <%= image_tag 'bookmark-white.svg' %>
+      <div class="bookmark-recipe" data-bookmark-id="<%= @recipe.id %>">
+        <%= render  'bookmarks/bookmark_icon', locals: { recipe: @recipe.id } %>
       </div>
+
   </div>
 
   <div class='ingridients-container'>
@@ -47,7 +48,7 @@
       <%#= link_to 'other recipes', :back %>
       <%= link_to "add to bookmark", recipe_bookmarks_path(@recipe.id), method: :post  %>
     </div>
-  
+
   <div class="others-container">
     <h3> Other suggestions</h3>
       <% @recipes.each do %>
