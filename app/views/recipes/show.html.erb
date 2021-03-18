@@ -39,6 +39,7 @@
 
      <div class="page">
       <%= link_to 'other recipes', :back %>
+        <%= link_to "add to bookmark", recipe_bookmarks_path(@recipe.id), method: :post  %>
     </div>
   <div class="others-container">
       <% @recipes.each do %>
