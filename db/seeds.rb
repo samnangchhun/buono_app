@@ -37,11 +37,11 @@ puts 'users created'
 puts 'seeeding recipes'
 
 ingredients = Dir["db/jsons/ingredients/**/*.json"].sort
-recipes = Dir["db/jsons/ingredients/**/*.json"].sort
+recipes = Dir["db/jsons/recipes/**/*.json"].sort
 
 recipes.each_with_index do |recipe_file, index|
   recipe_serialized = File.read(recipe_file)
-  recipe_json = JSON.parse(recipe_serialized)
+  p recipe_json = JSON.parse(recipe_serialized)
   recipe_ingredients_serialized = File.read(ingredients[index])
   recipe_ingredients_json = JSON.parse(recipe_ingredients_serialized)
 
@@ -49,7 +49,7 @@ recipes.each_with_index do |recipe_file, index|
   recipe.title = recipe_json['title']
   recipe.instruction = recipe_json['instructions']
   recipe.cooking_time = recipe_json['readyInMinutes']
-  recipe.photo = recipe_json['sourceUrl']
+  recipe.photo = recipe_json['image']
   recipe.save
 
   recipe_ingredients_json['ingredients'].each do |element|
@@ -57,7 +57,7 @@ recipes.each_with_index do |recipe_file, index|
     ingredient.name = element['name']
     ingredient.photo = element['image']
     ingredient.save unless Ingredient.find_by(name: element['name'])
-    RecipeIngredient.create(recipe: recipe, ingredient: ingredient)
+    RecipeIngredient.create(recipe: recipe, ingredient: Ingredient.find_by(name: element['name']))
   end
 end
 
