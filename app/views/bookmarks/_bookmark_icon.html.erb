@@ -1,14 +1,11 @@
 <%# if @recipe.bookmarks.where(user_id: current_user.id).first %>
-
-<% bookmark = current_user.bookmarks.find_by(recipe_id: locals[:recipe]) %>
-<% if bookmark %>
-    <%= link_to bookmark_path(bookmark), remote: true, method: :delete do %>
-    <i class="fas fa-bookmark"></i>
+<% if bookmark = current_user.bookmarks.find_by(recipe_id: @recipe.id) %>
+    <%= link_to bookmark_path(bookmark.id, page: 'show'), remote: true, method: :delete, locals: { recipe_id: @recipe.id, page: 'show' } do %>
+    <i class="fas fa-bookmark bookmark-icon-color"></i>
     <% end %>
 <% else %>
-  <%= link_to recipe_bookmarks_path(locals[:recipe]), remote: true, method: :post do %>
-  <i class="far fa-bookmark"></i>
+  <%= link_to recipe_bookmarks_path(@recipe.id), remote: true, method: :post do %>
+  <i class="far fa-bookmark bookmark-icon-color"></i>
   <% end %>
 <% end %>
-
 

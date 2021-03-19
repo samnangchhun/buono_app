@@ -6,7 +6,7 @@
         <%= @recipe.cooking_time %> min
       </div>
       <div class="bookmark-recipe" data-bookmark-id="<%= @recipe.id %>">
-        <%= render  'bookmarks/bookmark_icon', locals: { recipe: @recipe.id } %>
+        <%= render  'bookmarks/bookmark_icon', locals: { recipe: @recipe.id, page: 'show' } %>
       </div>
 
   </div>
@@ -14,7 +14,7 @@
   <div class='ingridients-container'>
     <div class="d-flex" style="justify-content: space-between; color: #E0AC62;">
     <h1> <%= @recipe.title %> </h1>
-      <div class="rating-star" style="padding-top: 1.3%;">
+      <div class="rating-star" style="padding-top: 1.3%; ">
         <% if @recipe.reviews.empty? %>
                Be the first to review
             <% else %>
@@ -42,12 +42,6 @@
     <h3>Instructions</h3>
     <p><%= @recipe.instruction %></p>
   </div>
-
-
-    <div class="page">
-      <%#= link_to 'other recipes', :back %>
-      <%= link_to "add to bookmark", recipe_bookmarks_path(@recipe.id), method: :post  %>
-    </div>
 
   <div class="others-container">
     <h3> Other suggestions</h3>

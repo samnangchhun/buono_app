@@ -11,17 +11,26 @@ class BookmarksController < ApplicationController
     @bookmark.user = current_user
     @bookmark.recipe = @recipe
     @bookmark.save
-    # redirect_to recipe_path(@recipe)
-    respond_to do |format|
+    if params[:page] == 'bookmarks/index'
+      respond_to do |format|
+      format.js { render partial: "bookmarks/update_bookmark_index_card" }
+      end
+    else
+      respond_to do |format|
       format.js { render partial: "bookmarks/update_bookmark_card" }
+      end
     end
   end
 
   def destroy
+    @recipe = Recipe.find(@bookmark.recipe.id)
     @bookmark.destroy
-    # redirect_to bookmarks_path
-    respond_to do |format|
-      format.js { render partial: "bookmarks/update_bookmark_card" }
+    if params[:page] == 'show'
+      respond_to do |format|
+      format.js { render partial: "bookmarks/update_bookmark_card", locals: { recipe_id: @recipe.id } }
+      end
+    else
+    redirect_to bookmarks_path
     end
   end
 
