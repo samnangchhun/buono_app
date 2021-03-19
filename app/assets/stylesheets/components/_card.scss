@@ -33,69 +33,73 @@
   margin-top: 8px;
 }
 
-// Search bar
-
-
-.search_bar {
-  width: 329px;
-  border-radius: 15px;
-  opacity: 0.8;
-}
-
-
 
 
 // Index
 
+
+.indexpage-header p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding-left: 2.2rem;
+  padding-top: 0;
+  font-size: 14px;
+  font-weight: 200;
+}
+
 .card-trip {
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 3px;
-}
-
-.card-trip > img {
-  height: 200px;
+  position: relative;
   width: 100%;
-  object-fit: cover;
-  border-bottom-right-radius: 10px;
-}
-
-.card-trip p {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-  color: rgb(50, 50, 50);
-  text-transform: uppercase;
+  height: 70%;
+  margin: 1.5em auto;
   display: flex;
-  align-items: baseline;
+  img {
+    width: 60%;
+    object-fit: cover;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 0.5em 0.5em;
+  }
+
 }
 
-.card-trip p {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 200;
-  font-size: 12px;
-  opacity: .7;
-  margin: 0;
+.card-trip-time {
+margin-top: 0;
+margin-bottom: 0;
+font-size: 12px;
+text-align: right;
+position: absolute;
+z-index: 3;
+left: 13px;
+bottom: 129px;
+border: 1px solid white;
+border-radius: 55px;
+background: white;
+padding: 2px 4px;
+
 }
 
 .card-trip-infos {
-  padding: 16px;
-  position: relative;
-  color: gray;
+  text-align: left;
+  margin: 5px;
+  padding: 0.5em;
+
+  a {
+    font-weight: 600;
+    font-size: 16px;
+    margin: 0;
+    text-decoration: none;
+    color: $gray;
+  }
+
+  .rating_stars {
+    color: orange;
+    font-size: 12px;
+  }
 }
 
-.card-trip-infos h2 a {
-font-family: 'Poppins', sans-serif;
-font-weight: 700;
-font-size: 16px;
-font-weight: bold;
-margin: 0;
-text-decoration: none;
-color: rgb(50, 50, 50);
-}
 
 .card-trip-infos h2 a:hover {
 text-decoration: none;
@@ -109,10 +113,9 @@ text-decoration: none;
 }
 
 .cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
-  margin-bottom: 80px;
+  grid-template-columns:1fr;
+  grid-gap: 13px;
+  padding: 1.5rem auto;
 }
 
 
@@ -122,8 +125,8 @@ text-decoration: none;
   position: relative;
   overflow: hidden;
   background: white;
-  border-bottom-right-radius: 20px;
-  border-bottom-left-radius: 20px;
+  border-radius: 3px;
+
 }
 
 .card-recipe-show > img {
