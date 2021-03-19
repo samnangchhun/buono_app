@@ -1,19 +1,25 @@
 <div class="navbar-top">
-  <div class="icon-back">
-    <% if (@recipe && current_page?(recipe_path(@recipe.id))) || current_page?(recipes_path) %>
+  <% if (@recipe && current_page?(recipe_path(@recipe.id))) || current_page?(recipes_path) %>
+    <div class="icon-back">
       <%= link_to :back do %> <!-- another way to go back through the history of pages <%#= link_to 'javascript:history.back()' do %> -->
-      <i class="fas fa-chevron-left"></i>
-      <% end  %>
+        <i class="fas fa-chevron-left"></i>
+      <% end %>
+    </div>
+  <% end %>
+  <div class="logo">
+    <%= link_to root_path do %>
+      <%= image_tag("logo/logo_small_white.svg") %>
     <% end %>
   </div>
-  <div class="logo">
-    <%= image_tag("logo/logo_small_white.svg") %>
-  </div>
-  <div class="icon-profile text-right">
+  <div class="icon-profile">
     <% if user_signed_in? %>
-      <i class="fas fa-user-circle"></i>
+      <%= link_to destroy_user_session_path, method: :delete do %>
+        <i class="fas fa-user-circle"></i>
+      <% end %>
     <% else %>
-      <i class="far fa-user"></i>
+      <%= link_to new_user_session_path do %>
+        <i class="far fa-user"></i>
+      <% end %>
     <% end %>
   </div>
 </div>
