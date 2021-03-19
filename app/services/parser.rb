@@ -14,12 +14,15 @@ class Parser
     recipes = JSON.parse(serialized_recipes)
     id_recipes = recipes.map { |id_recipe| id_recipe['id'] }
     id_recipes.each do |id|
-      url_recipes = "https://api.spoonacular.com/recipes/#{id}/ingredientWidget.json?apiKey=#{apikey}"
-      Fetch.fetch(url_recipes, id, "ingredients")
+      url_ingredients = "https://api.spoonacular.com/recipes/#{id}/ingredientWidget.json?apiKey=#{apikey}"
+      Fetch.fetch(url_ingredients, id, "ingredients")
     end
   end
 
   # def self.parse_json(filepath)
   #   JSON.parse(File.read(filepath))
   # end
+
+  # url_recipes = "https://api.spoonacular.com/recipes/#{id}/information?apiKey=#{apikey}&includeNutrition=false"
+  # url_ingredients = "https://api.spoonacular.com/recipes/#{id}/ingredientWidget.json?apiKey=#{apikey}"
 end

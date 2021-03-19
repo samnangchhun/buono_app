@@ -1,14 +1,14 @@
 # require 'faker'
 require 'json'
-# puts 'seeding 5 users...'
+puts 'seeding 5 users...'
 
-# User.create(email: 'fra@mail.com', password: '123456')
-# User.create(email: 'mich@mail.com', password: '123456')
-# User.create(email: 'sam@mail.com', password: '123456')
-# User.create(email: 'edo@mail.com', password: '123456')
-# User.create(email: 'lara@mail.com', password: '123456')
+User.create(email: 'fra@mail.com', password: '123456')
+User.create(email: 'mich@mail.com', password: '123456')
+User.create(email: 'sam@mail.com', password: '123456')
+User.create(email: 'edo@mail.com', password: '123456')
+User.create(email: 'lara@mail.com', password: '123456')
 
-# puts 'users created'
+puts 'users created'
 
 # # puts 'seeding 20 ingredients...'
 
@@ -24,17 +24,44 @@ require 'json'
   #   instruction: Faker::Food.description,
   #   cooking_time: rand(10..40)
   # )
-Dir.each_child('db/jsons/recipes') do |file|
-  json = JSON.parse(file)
+# Dir.each_child('db/jsons/recipes') do |file|
+#   json = JSON.parse(file)
+#   recipe = Recipe.new
+#   recipe.title = json['title']
+#   recipe.cooking_time = json['readyInMinutes']
+#   recipe.photo = json['image']
+#   recipe.instruction = json['instructions']
+#   p recipe
+# end
+
+puts 'seeeding recipes'
+
+ingredients = Dir["db/jsons/ingredients/**/*.json"].sort
+recipes = Dir["db/jsons/ingredients/**/*.json"].sort
+
+recipes.each_with_index do |recipe_file, index|
+  recipe_serialized = File.read(recipe_file)
+  recipe_json = JSON.parse(recipe_serialized)
+  recipe_ingredients_serialized = File.read(ingredients[index])
+  recipe_ingredients_json = JSON.parse(recipe_ingredients_serialized)
+
   recipe = Recipe.new
-  recipe.title = json['title']
-  recipe.cooking_time = json['readyInMinutes']
-  recipe.photo = json['image']
-  recipe.instruction = json['instructions']
-  p recipe
+  recipe.title = recipe_json['title']
+  recipe.instruction = recipe_json['instructions']
+  recipe.cooking_time = recipe_json['readyInMinutes']
+  recipe.photo = recipe_json['sourceUrl']
+  recipe.save
+
+  recipe_ingredients_json['ingredients'].each do |element|
+    ingredient = Ingredient.new
+    ingredient.name = element['name']
+    ingredient.photo = element['image']
+    ingredient.save unless Ingredient.find_by(name: element['name'])
+    RecipeIngredient.create(recipe: recipe, ingredient: ingredient)
+  end
 end
 
-# puts 'recipes created'
+puts 'recipes created'
 
 # puts 'joining ingredients and recipe...'
 
@@ -77,6 +104,3 @@ end
 
 
 # puts 'seeds completed'
-
-
-
