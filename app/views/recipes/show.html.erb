@@ -1,7 +1,7 @@
 <div class="show-container">
 
   <div class="card-recipe-show">
-    <img src="https://144f2a3a2f948f23fc61-ca525f0a2beaec3e91ca498facd51f15.ssl.cf3.rackcdn.com/uploads/food_portal_data/recipes/recipe/hero_article_image/4417/compressed_Meatlessfarm_Lasagne.jpg" />
+    <img src=<%= @recipe.photo %>>
       <div class="cooking_time">
         <%= @recipe.cooking_time %> min
       </div>
@@ -45,9 +45,9 @@
 
   <div class="others-container">
     <h3> Other suggestions</h3>
-      <% @recipes.each do %>
+      <% @recipes.each do |recipe|%>
     <div class="img-recipe-suggestion">
-      <img src="https://assets.bonappetit.com/photos/57ae32871b33404414975b7c/1:1/w_2560%2Cc_limit/rigatoni-with-spicy-calabrese-style-pork-ragu.jpg">
+      <img src=<%= recipe.photo %>>
     </div>
     <% end %>
   </div>
