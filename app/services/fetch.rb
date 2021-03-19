@@ -2,19 +2,16 @@ require 'open-uri'
 require 'json'
 
 class Fetch
-  def self.fetch_recipe(id)
-    apikey = "c230327f3f7043b1b2990425b5e59e12"
-    url = "https://api.spoonacular.com/recipes/#{id}/information?apiKey=#{apikey}&includeNutrition=false"
-    p url
+  def self.fetch(url, id, folder)
     json = open(url).read
     json_parsed = JSON.parse(json)
-    save_json(json_parsed, id)
+    save_json(json_parsed, id, folder)
   end
 
   private
 
-  def self.save_json(json, id)
-    filepath = "db/jsons/recipes/recipe_#{id}.json"
+  def self.save_json(json, id, folder)
+    filepath = "db/jsons/#{folder}/recipe_#{id}_#{folder}.json"
     File.open(filepath, 'wb') { |file| file.write(JSON.generate(json)) }
   end
 end
