@@ -20,23 +20,18 @@
 }
 
 .navbar-top {
-  background-color: transparent;
+  width: 375px;
+  height: 50px;
+  background-color: $gray;
   padding: 1em 1.5em;
-  font-size: 18px;
+  font-size: 23px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+
   i {
-  color: #979797;
+  color: $purple;
   }
 }
 
-// .navbar-top-back {
-//   background-color: transparent;
-//   padding: 1em 1.5em;
-//   font-size: 18px;
-//   display: flex;
-//   justify-content: space-between;
-//   i {
-//     color: #979797;
-//   }
-// }
+

@@ -1,36 +1,38 @@
-<h2 class="index-title">Results</h2>
+<div class='flex_div index_page'>
 
-<div class='flex_div'>
-  <div>
-    <div class='cards mr-2 ml-2'>
+    <div class="indexpage-header">
+      <h1>Results</h1>
       <% if params[:ingredients] != nil %>
         <% @recipes.each do |hash|%>
-          <% ingredients_number = params[:ingredients].length %>
-          <p>recepies with: <%= hash[:matching_ingredients]  %> / <%= ingredients_number %> ingredients</p>
-            <% hash[:recipes].each do |recipe| %>
-              <div class="card-trip">
-                <img src="https://144f2a3a2f948f23fc61-ca525f0a2beaec3e91ca498facd51f15.ssl.cf3.rackcdn.com/uploads/food_portal_data/recipes/recipe/hero_article_image/4417/compressed_Meatlessfarm_Lasagne.jpg" />
-                <% if recipe.reviews.empty? %>
-                  Be the first to review
-                <% else %>
-                  <% recipe.rating_average.times do %>
+        <% ingredients_number = params[:ingredients].length %>
+         <p>recepies with: <%= hash[:matching_ingredients]  %> / <%= ingredients_number %> ingredients</p>
+    </div>
+
+    <div class='cards'>
+      <% hash[:recipes].each do |recipe| %>
+        <div class="card-trip">
+          <span class="card-trip-time"><%= recipe.cooking_time %> min</span>
+          <img src="https://144f2a3a2f948f23fc61-ca525f0a2beaec3e91ca498facd51f15.ssl.cf3.rackcdn.com/uploads/food_portal_data/recipes/recipe/hero_article_image/4417/compressed_Meatlessfarm_Lasagne.jpg" />
+          <div class="card-trip-infos">
+            <a><%= link_to recipe.title, recipe_path(recipe.id) %></a>
+            <div class="rating_stars">
+              <% if recipe.reviews.empty? %>
+                Be the first to review
+              <% else %>
+                <% recipe.rating_average.times do %>
                   <i class="fas fa-star"></i>
-                  <% end%>
-                  <% unless recipe.rating_average == 5 %>
-                    <% (5 - recipe.rating_average).times do  %>
-                      <i class="far fa-star"></i>
-                    <% end %>
-                  <% end %>
+                <% end%>
+              <% unless recipe.rating_average == 5 %>
+                <% (5 - recipe.rating_average).times do  %>
+                  <i class="far fa-star"></i>
                 <% end %>
-                <div class="card-trip-infos">
-                  <div>
-                    <h2><%= link_to recipe.title, recipe_path(recipe.id) %></h2>
-                  </div>
-                  <p class="card-trip-time"><%= recipe.cooking_time %> min</p>
-                </div>
-              </div>
-            <% end %>
-        <% end %>
+              <% end %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <% end %>
       <% else %>
         <% @recipes.each do |recipe|%>
           <div class="card-trip">
@@ -56,6 +58,7 @@
           </div>
         <% end %>
       <% end %>
-    </div>
   </div>
 </div>
+
+
