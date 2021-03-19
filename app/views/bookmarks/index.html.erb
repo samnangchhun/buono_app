@@ -8,26 +8,27 @@
   <div class='cards mr-2 ml-2'>
     <% @bookmarks.each do |bookmark| %>
       <% recipe = bookmark.recipe %>
-      <div class="card-trip">
+      <div class="card-trip" id="bookmark-index" data-bookmark-index-id="<%= recipe.id %>">
         <img src="https://144f2a3a2f948f23fc61-ca525f0a2beaec3e91ca498facd51f15.ssl.cf3.rackcdn.com/uploads/food_portal_data/recipes/recipe/hero_article_image/4417/compressed_Meatlessfarm_Lasagne.jpg" />
-        <% unless recipe.reviews.empty? %>
-          <% recipe.rating_average.times do %>
-            <i class="fas fa-star"></i>
-          <% end%>
-          <% unless recipe.rating_average == 5 %>
-            <% (5 - recipe.rating_average).times do  %>
-              <i class="far fa-star"></i>
-            <% end %>
-          <% end %>
+    <% unless recipe.reviews.empty? %>
+      <% recipe.rating_average.times do %>
+        <i class="fas fa-star"></i>
+      <% end%>
+      <% unless recipe.rating_average == 5 %>
+        <% (5 - recipe.rating_average).times do  %>
+          <i class="far fa-star"></i>
         <% end %>
-        <div class="card-trip-infos">
-          <div>
-            <h2><%= link_to recipe.title, recipe_path(recipe.id) %></h2>
-          </div>
-          <p class="card-trip-time"><%= recipe.cooking_time %> min</p>
-          <%= render  'bookmark_icon', locals: { recipe: recipe.id } %>
-        </div>
+      <% end %>
+    <% end %>
+    <div class="card-trip-infos" id="bookmark-index" data-bookmark-index-id="<%= recipe.id %>">
+      <div>
+        <h2><%= link_to recipe.title, recipe_path(recipe.id) %></h2>
       </div>
+      <p class="card-trip-time"><%= recipe.cooking_time %> min</p>
+        <%= link_to bookmark_path(bookmark.id), method: :delete, locals: { recipe_id: recipe.id, page: 'bookmarks/index' } do %>
+        <i class="fas fa-bookmark bookmark-icon-color-index"></i>
+      <% end %>
+    </div>
     <% end %>
   </div>
 <% end %>

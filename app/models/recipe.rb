@@ -1,5 +1,6 @@
 class Recipe < ApplicationRecord
   has_many :bookmarks, dependent: :destroy
+  has_many :users, through: :bookmarks
   has_many :recipe_ingredients, dependent: :destroy
   has_many :ingredients, through: :recipe_ingredients
   has_many :reviews
@@ -28,5 +29,5 @@ class Recipe < ApplicationRecord
     end.uniq
     priorities.sort_by { |hash| -hash[:matching_ingredients] }
   end
-  
+
 end

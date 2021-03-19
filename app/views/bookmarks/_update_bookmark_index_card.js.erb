@@ -1,0 +1,4 @@
+const query = document.getElementByID(`bookmark-index[data-bookmark-index-id="<%= recipe.id %>"]`).innerHTML = `<%= render 'bookmark_index_icon', locals: { recipe: recipe.id, page: 'bookmarks/index' } %>`
+
+if (query) { console.log('iWork') }
+
