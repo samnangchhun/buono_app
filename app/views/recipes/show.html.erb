@@ -13,7 +13,7 @@
 
   <div class='ingridients-container'>
     <div class="d-flex" style="justify-content: space-between; color: #E0AC62;">
-    <h1> <%= @recipe.title %> </h1>
+    <h2> <%= @recipe.title %> </h2>
       <div class="rating-star" style="padding-top: 1.3%; ">
         <% if @recipe.reviews.empty? %>
                Be the first to review
@@ -53,5 +53,3 @@
   </div>
 
 </div>
-
- <%= render 'shared/navbar' %>
