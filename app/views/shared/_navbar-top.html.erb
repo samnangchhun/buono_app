@@ -1,19 +1,19 @@
 <div class="navbar-top">
-  <div class ="icon-back">
+  <div class="icon-back">
     <% if (@recipe && current_page?(recipe_path(@recipe.id))) || current_page?(recipes_path) %>
-      <%= link_to :back do %>
+      <%= link_to :back do %> <!-- another way to go back through the history of pages <%#= link_to 'javascript:history.back()' do %> -->
       <i class="fas fa-chevron-left"></i>
       <% end  %>
     <% end %>
   </div>
+  <div class="logo">
+    <%= image_tag("logo/logo_small_white.svg") %>
+  </div>
   <div class="icon-profile text-right">
     <% if user_signed_in? %>
       <i class="fas fa-user-circle"></i>
-    <%else %>
+    <% else %>
       <i class="far fa-user"></i>
-    <%end %>
+    <% end %>
   </div>
 </div>
-
-
-
