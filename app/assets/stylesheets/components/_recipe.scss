@@ -1,0 +1,14 @@
+.recipe {
+  margin: 2em auto;
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+
+  img {
+    width: 100%;
+    border-radius: 0 1em 1em 0;
+  }
+
+  .recipe-title {
+    font-size: .7rem;
+  }
+}
