@@ -5,9 +5,10 @@ class Recipe < ApplicationRecord
   has_many :ingredients, through: :recipe_ingredients
   has_many :reviews
 
-
   def rating_average
     reviews = self.reviews
+    return 3 if reviews.empty?
+
     sum = 0
     reviews.each do |review|
       sum += review.rating

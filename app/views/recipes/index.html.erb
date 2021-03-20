@@ -1,64 +1,16 @@
-<div class='flex_div index_page'>
+<h1>Prepare something Buono!</h1>
+<% if params[:ingredients] != nil %>
+  <% @recipes.each do |hash|%>
+    <% ingredients_number = params[:ingredients].length %>
+    <p>recepies with: <%= hash[:matching_ingredients]  %> / <%= ingredients_number %> ingredients</p>
 
-    <div class="indexpage-header">
-      <h1>Results</h1>
-      <% if params[:ingredients] != nil %>
-        <% @recipes.each do |hash|%>
-        <% ingredients_number = params[:ingredients].length %>
-         <p>recepies with: <%= hash[:matching_ingredients]  %> / <%= ingredients_number %> ingredients</p>
-    </div>
-
-    <div class='cards'>
+    <div class="recipes">
       <% hash[:recipes].each do |recipe| %>
-        <div class="card-trip">
-            <span class="card-trip-time"><%= recipe.cooking_time %> min</span>
-            <img src=<%= recipe.photo %>>
-          <div class="card-trip-infos">
-            <a><%= link_to recipe.title, recipe_path(recipe.id) %></a>
-            <div class="rating_stars">
-              <% if recipe.reviews.empty? %>
-                Be the first to review
-              <% else %>
-                <% recipe.rating_average.times do %>
-                  <i class="fas fa-star"></i>
-                <% end%>
-              <% unless recipe.rating_average == 5 %>
-                <% (5 - recipe.rating_average).times do  %>
-                  <i class="far fa-star"></i>
-                <% end %>
-              <% end %>
-              <% end %>
-            </div>
-          </div>
-        </div>
+        <%= render 'shared/recipe', locals: {recipe: recipe} %>
       <% end %>
-      <% end %>
-      <% else %>
-        <% @recipes.each do |recipe|%>
-          <div class="card-trip">
-            <img src=<%= recipe.photo %>>
-            <% if recipe.reviews.empty? %>
-              Be the first to review
-            <% else %>
-              <% recipe.rating_average.times do %>
-                <i class="fas fa-star"></i>
-              <% end%>
-              <% unless recipe.rating_average == 5 %>
-                <% (5 - recipe.rating_average).times do  %>
-                  <i class="far fa-star"></i>
-                <% end %>
-              <% end %>
-            <% end %>
-            <div class="card-trip-infos">
-              <div>
-                <h2><%= link_to recipe.title, recipe_path(recipe.id) %></h2>
-              </div>
-              <p class="card-trip-time"><%= recipe.cooking_time %> min</p>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-  </div>
-</div>
-
-
+  <% end %>
+<% else %>
+  <% @recipes.each do |recipe|%>
+    <%= render 'shared/recipe', locals: {recipe: recipe} %>
+  <% end %>
+<% end %>
