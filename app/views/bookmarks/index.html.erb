@@ -6,8 +6,8 @@
 <% else %>
   <div class='bookmars recipes'>
     <% @bookmarks.each do |bookmark| %>
-      <%= render 'shared/recipe' %>
-      <%= link_to bookmark_path(bookmark.id), method: :delete, locals: { recipe_id: recipe.id, page: 'bookmarks/index' } do %>
+      <%= render 'shared/recipe', locals: { recipe: bookmark.recipe } %>
+      <%= link_to bookmark_path(bookmark.id), method: :delete, locals: { recipe_id: bookmark.recipe.id, page: 'bookmarks/index' } do %>
         <i class="fas fa-bookmark bookmark-icon-color-index"></i>
       <% end %>
     <% end %>
