@@ -1,11 +1,16 @@
 <div class="background">
+
   <div id="logo">
     <%= image_tag("logo/logo_big_white.png") %>
   </div>
-  <%= link_to "start cooking", fridge_path, class:"cta button-cta"%>
-   <div class="signup-login">
-    <a class="signup" href="#">Sign up</a>
-    <a class="login" href="#">Log in </a>
-  </div>
+  <% if user_signed_in? %>
+    <a class= "cta button-cta" href="/fridge">Start cooking</a>
+  <% else %>
+      <a class= "cta button-cta" href="/fridge">Start cooking</a>
+     <div class="signup-login">
+      <a class="signup" href="/users/sign_in">Sign up</a>
+      <a class="login" href="/users/sign_in">Log in</a>
+    </div>
+  <% end %>
 </div>
 
