@@ -1,17 +1,27 @@
-<h1>Buono! Bookmarks</h1>
 
-<% if @bookmarks.empty? %>
-  <h3>You dont have any bookmarks</h3>
-  <%= link_to "check some recipes", recipes_path %>
-<% else %>
-  <div class='bookmars recipes'>
-    <% @bookmarks.each do |bookmark| %>
-      <%= render 'shared/recipe', locals: { recipe: bookmark.recipe } %>
-      <%= link_to bookmark_path(bookmark.id), method: :delete, locals: { recipe_id: bookmark.recipe.id, page: 'bookmarks/index' } do %>
-        <i class="fas fa-bookmark bookmark-icon-color-index"></i>
-      <% end %>
+<!-- <h1>Your favorite recipe</h1> -->
+<div>
+  <div class="bookmarks-container">
+    <div class="bookmarks-profile"></div>
+  </div>
+
+  <div class="bookmarks-category">
+<!--     <span>For you</span> -->
+    <span>For you</span>
+    <span>Your bookmark</span>
+  </div>
+
+  <div class="bookmarks-cards-container">
+    <% if @bookmarks.empty? %>
+      <h3>You dont have any bookmarks</h3>
+       <%= link_to "check some recipes", recipes_path %>
+    <% else %>
+      <div class="bookmarks-card">
+      </div>
     <% end %>
   </div>
-<% end %>
 
+
+
+</div>
 

@@ -1,0 +1,44 @@
+.bookmarks-container {
+  // background: orange;
+  padding: 3rem;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+
+.bookmarks-profile {
+
+  background: gray;
+  padding: 1rem;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.bookmarks-category {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 10px;
+
+  span {
+    padding: 4px 5px;
+    font-size: 14px;
+    font-weight: 300px;
+    font-weight: lighter;
+    color: $gray;
+  }
+  span:hover {
+    border: 1px solid $purple;
+    border-radius: 23px;
+  }
+
+
+}
+
+.bookmarks-cards-container {
+  padding: 5rem;
+  margin: 15px 0;
+  background: $orange;
+}
