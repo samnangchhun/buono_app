@@ -1,27 +1,33 @@
 
-<!-- <h1>Your favorite recipe</h1> -->
 <div>
   <div class="bookmarks-container">
     <div class="bookmarks-profile"></div>
+    <i class="fas fa-plus-circle"></i>
   </div>
 
   <div class="bookmarks-category">
-<!--     <span>For you</span> -->
-    <span>For you</span>
-    <span>Your bookmark</span>
+    <span class="active">Your bookmark</span>
+    <span >Your selection</span>
   </div>
 
-  <div class="bookmarks-cards-container">
-    <% if @bookmarks.empty? %>
-      <h3>You dont have any bookmarks</h3>
-       <%= link_to "check some recipes", recipes_path %>
-    <% else %>
-      <div class="bookmarks-card">
-      </div>
-    <% end %>
+  <div class="bookmarks-list-container">
+    <div class="bookmarks-cards-container active">
+      <% if @bookmarks.empty? %>
+        <h3>You dont have any bookmarks</h3>
+         <%= link_to "check some recipes", recipes_path %>
+      <% else %>
+        <div class="bookmarks-cards">
+          <% @bookmarks.each do |bookmark| %>
+          <%= render 'shared/bookmarks_recipe', locals: { bookmark: bookmark } %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="foryou">
+      <span>Trending</span>
+    </div>
   </div>
-
-
-
 </div>
+
 
