@@ -1,0 +1,30 @@
+
+<% bookmark = locals[:bookmark] %>
+<% recipe = bookmark.recipe %>
+<%= link_to recipe_path(recipe.id) do %>
+  <div class="bookmarks-recipe" >
+    <%= image_tag recipe.photo %>
+    <div class="recipe-icons-top">
+      <span class="bookmarks-recipe-time">
+        <%= recipe.cooking_time %> min
+      </span>
+      <%= link_to bookmark_path(bookmark.id), method: :delete, locals: { recipe_id:recipe.id, page: 'bookmarks/index' } do %>
+        <i class="fas fa-bookmark bookmark-icon-color-index"></i>
+      <% end %>
+    </div>
+    <div class="bookmarks-recipe-title-raiting">
+      <%= link_to recipe.title, recipe_path(recipe.id), class:"bookmarks-recipe-title" %>
+      <div class="bookmarks-recipe-rating">
+        <% recipe.rating_average.times do %>
+          <i class="fas fa-star"></i>
+        <% end %>
+        <% unless recipe.rating_average == 5 %>
+          <% (5 - recipe.rating_average).times do  %>
+            <i class="far fa-star"></i>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
