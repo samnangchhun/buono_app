@@ -2,3 +2,30 @@
   display: flex;
   flex-direction: column;
 }
+
+.recipe-ingredients {
+
+
+  ul li {
+    border: 1px solid $purple;
+    border-radius: 14px;
+    background-color: transparent;
+    color: #453E3E;
+    margin: 3px;
+    padding-left: 1em;
+    padding-right: 1em;
+    text-align: left;
+  }
+}
+
+
+.search-categories {
+
+  p {
+    color: gray;
+    padding: 1em;
+    margin-bottom: -2px;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+}

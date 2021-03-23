@@ -1,32 +1,38 @@
 <% recipe = locals[:recipe] %>
-<div class="recipe">
+<%= link_to recipe_path(recipe.id) do %>
+  <div class="recipe">
 
-  <div class="recipe-left">
-    <%= image_tag recipe.photo %>
-    <span class="recipe-time">
-      <%= recipe.cooking_time %> min
-    </span>
-    <div class="recipe-rating">
-      <% recipe.rating_average.times do %>
-        <i class="fas fa-star"></i>
-      <% end %>
-      <% unless recipe.rating_average == 5 %>
-        <% (5 - recipe.rating_average).times do  %>
-          <i class="far fa-star"></i>
+    <div class="recipe-left">
+      <%= image_tag recipe.photo %>
+      <span class="recipe-time">
+        <%= recipe.cooking_time %> min
+      </span>
+      <div class="recipe-rating">
+        <% recipe.rating_average.times do %>
+          <i class="fas fa-star"></i>
         <% end %>
-      <% end %>
+        <% unless recipe.rating_average == 5 %>
+          <% (5 - recipe.rating_average).times do  %>
+            <i class="far fa-star"></i>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="recipe-right">
+      <div class="recipe-title">
+        <%= link_to recipe.title, recipe_path(recipe.id) %>
+      </div>
+      <div class="recipe-ingredients">
+        <ul>
+          <% recipe.ingredients.each do |ingredient| %>
+          <% if !params[:ingredients].nil? && params[:ingredients].include?(ingredient.id.to_s) %>
+            <!-- <li class=<%#= params[:ingredients].include?(ingredient.id.to_s) ? "match" : "unmatch" unless params[:ingredients].nil? %>><%= ingredient.name %></li> -->
+            <li> <%= ingredient.name %> </li>
+          <% end %>
+          <% end %>
+        </ul>
+      </div>
     </div>
   </div>
-
-  <div class="recipe-right">
-    <div class="recipe-title">
-      <%= link_to recipe.title, recipe_path(recipe.id) %>
-    </div>
-    <div class="recipe-ingredients">
-      <% recipe.ingredients.each do |ingredient| %>
-        <p class=<%= params[:ingredients].include?(ingredient.id.to_s) ? "match" : "unmatch" unless params[:ingredients].nil? %>><%= ingredient.name %></p>
-      <% end %>
-    </div>
-  </div>
-
-</div>
+<% end %>
