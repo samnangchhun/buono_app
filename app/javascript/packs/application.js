@@ -29,9 +29,11 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import { initSelect2 } from '../components/initSelect2';
 import { accordion } from '../components/accordion';
+import { dropDown } from '../components/profileDropDown';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initSelect2();
   accordion();
+  dropDown();
 });
