@@ -13,9 +13,15 @@
   </div>
   <div class="icon-profile">
     <% if user_signed_in? %>
-      <%= link_to destroy_user_session_path, method: :delete do %>
-        <i class="fas fa-user-circle"></i>
-      <% end %>
+      <div class="User-area">
+        <div class="User-avtar">
+         <i class="fas fa-user-circle"></i>
+        </div>
+          <ul class="User-Dropdown">
+            <li><%= link_to 'My profile', bookmarks_path %></li>
+            <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+          </ul>
+      </div>
     <% else %>
       <%= link_to new_user_session_path do %>
         <i class="far fa-user"></i>
