@@ -2,7 +2,9 @@
 <% if params[:ingredients] != nil %>
   <% @recipes.each do |hash|%>
     <% ingredients_number = params[:ingredients].length %>
-    <p>recepies with: <%= hash[:matching_ingredients]  %> / <%= ingredients_number %> ingredients</p>
+    <div class="search-categories">
+      <p><%= hash[:matching_ingredients]  %> / <%= ingredients_number %> ingredients matched</p>
+    </div>
 
     <div class="recipes">
       <% hash[:recipes].each do |recipe| %>
