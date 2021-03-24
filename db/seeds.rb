@@ -55,6 +55,12 @@ recipes.each do |recipe_json|
     ingredient.save unless Ingredient.find_by(name: element)
     RecipeIngredient.create(recipe: recipe, ingredient: Ingredient.find_by(name: element))
   end
+  Review.create(
+    rating: rand(1..5),
+    content: "",
+    recipe: recipe,
+    user: User.all.sample
+    )
 end
 
 puts 'recipes created'

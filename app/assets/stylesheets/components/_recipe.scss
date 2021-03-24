@@ -5,15 +5,15 @@
 
   .recipe-left {
     position: relative;
-    background-color: black;
-    border-radius: 0 1em 1em 0;
+    // background-color: black;
+    // border-radius: 0 1em 1em 0;
 
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       border-radius: 0 1em 1em 0;
-      opacity: .7;
+      // opacity: .7;
       box-shadow: 0 0 15px rgba(0,0,0,0.2);
     }
 
@@ -30,7 +30,7 @@
     }
 
     .recipe-rating {
-      color: $orange;
+      color: rgb(250,190,25);
       position: absolute;
       bottom: .5em;
       left: 60%;
