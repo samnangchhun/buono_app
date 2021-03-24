@@ -31,6 +31,7 @@ import { initSelect2 } from '../components/initSelect2';
 import { clickbookmarks } from '../components/initBookmarks'
 import { accordion } from '../components/accordion';
 import { dropDown } from '../components/profileDropDown';
+import { shake } from '../components/shake';
 
 window.addEventListener('load', () => {
   navigator.serviceWorker.register('/service-worker.js').then(registration => {
@@ -58,6 +59,7 @@ document.addEventListener('turbolinks:load', () => {
   clickbookmarks();
   accordion();
   dropDown();
+  shake();
 });
 
 
