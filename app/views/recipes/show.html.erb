@@ -52,7 +52,9 @@
       <i class="fas fa-angle-down arrow"></i>
     </div>
     <div class="content">
-      <p><%= @recipe.instruction %></p>
+      <% @recipe.instruction.split("\n").each do |step| %>
+        <p><%= step %></p>
+      <% end %>
     </div>
   </div>
 </div>
