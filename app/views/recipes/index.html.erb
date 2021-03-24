@@ -1,18 +1,14 @@
 <h1>Prepare something Buono!</h1>
-<% if params[:ingredients] != nil %>
-  <% @recipes.each do |hash|%>
-    <% ingredients_number = params[:ingredients].length %>
-    <div class="search-categories">
-      <p><%= hash[:matching_ingredients]  %> / <%= ingredients_number %> ingredients matched</p>
-    </div>
-
-    <div class="recipes">
+<div class="recipes">
+  <% if params[:ingredients] != nil %>
+    <% @recipes.each do |hash|%>
       <% hash[:recipes].each do |recipe| %>
         <%= render 'shared/recipe', locals: {recipe: recipe} %>
       <% end %>
+    <% end %>
+  <% else %>
+    <% @recipes.each do |recipe|%>
+      <%= render 'shared/recipe', locals: {recipe: recipe} %>
+    <% end %>
   <% end %>
-<% else %>
-  <% @recipes.each do |recipe|%>
-    <%= render 'shared/recipe', locals: {recipe: recipe} %>
-  <% end %>
-<% end %>
+</div>
