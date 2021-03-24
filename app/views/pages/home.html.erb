@@ -4,9 +4,9 @@
     <%= image_tag("logo/logo_big_white.png") %>
   </div>
   <% if user_signed_in? %>
-    <a class= "cta button-cta" href="/fridge">Start cooking</a>
+    <button class= "cta button-cta" id="trigger-req">Start cooking</button>
   <% else %>
-      <a class= "cta button-cta" href="/fridge">Start cooking</a>
+    <button class= "cta button-cta" id="trigger-req">Start cooking</button>
      <div class="signup-login">
       <a class="signup" href="/users/sign_up">Sign up</a>
       <a class="login" href="/users/sign_in">Log in</a>
