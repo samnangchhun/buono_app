@@ -2,7 +2,7 @@
 <div class="fridge">
   <div class="fridge-content">
   <h1>Your fridge is empty </h1>
-  <form action='/recipes'>
+  <form action='/recipes' id="shake-form">
     <div class="search-bar-fridge">
     <%= select_tag "ingredients[]", options_from_collection_for_select(
       Ingredient.all, :id, :name),
@@ -14,4 +14,8 @@
   <div class="background-fridge">
     <%= image_tag 'background_fridge.svg' %>
   </div>
+</div>
+
+<div class="shake-modal">
+  <h1>Test</h1>
 </div>

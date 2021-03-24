@@ -31,6 +31,8 @@ import { initSelect2 } from '../components/initSelect2';
 import { clickbookmarks } from '../components/initBookmarks'
 import { accordion } from '../components/accordion';
 import { dropDown } from '../components/profileDropDown';
+import { initShake } from '../components/initShake';
+import { askForMotion } from '../components/askForMotion';
 
 window.addEventListener('load', () => {
   navigator.serviceWorker.register('/service-worker.js').then(registration => {
@@ -54,10 +56,12 @@ window.addEventListener('load', () => {
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
+  askForMotion()
   initSelect2();
   clickbookmarks();
   accordion();
   dropDown();
+  initShake()
 });
 
 
