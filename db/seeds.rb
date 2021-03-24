@@ -35,7 +35,7 @@ puts 'users created'
 # end
 
 puts 'seeeding recipes'
-serialized_recipes = File.read("db/jsons/new_recipes.json")
+serialized_recipes = File.read("db/recipes.json")
 recipes = JSON.parse(serialized_recipes)
 # ingredients = Dir["db/jsons/ingredients/**/*.json"].sort
 # recipes = Dir["db/jsons/recipes/**/*.json"].sort
@@ -51,7 +51,7 @@ recipes.each do |recipe_json|
   recipe_json['ingredients'].each do |element|
     ingredient = Ingredient.new
     ingredient.name = element
-    ingredient.photo = "#{element}.png"
+    ingredient.photo = "#{element}.svg"
     ingredient.save unless Ingredient.find_by(name: element)
     RecipeIngredient.create(recipe: recipe, ingredient: Ingredient.find_by(name: element))
   end
