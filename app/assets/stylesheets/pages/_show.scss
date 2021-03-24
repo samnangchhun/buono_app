@@ -29,6 +29,7 @@
     font-size: 1.5rem;
     color: $gray;
     padding-left: .5em;
+    max-width: 250px;
   }
 
   h6 {
@@ -39,7 +40,7 @@
   }
 
   .recipe-rating {
-    width: 65%;
+    padding-right: 1em;
   }
 }
 
@@ -73,7 +74,7 @@
     align-items: center;
   }
     .arrow{
-    color: $orange;
+    color: $gray;
     font-size: 2rem;
     transition: 0.25s ease;
     transform: rotate(-90deg);
@@ -84,7 +85,7 @@
   opacity: 1;
 }
 
-#accordion-1 .head:hover, #accordion-1 .active{
+#accordion-1 .active{
   background-color: $orange;
 }
 
@@ -96,12 +97,58 @@
 
 #accordion-1 .content{
   background-color: $light-gray;
-  display: none;
+  display: block;
   padding: 1.5em 2em;
   color: $gray;
   ul {
     list-style: none;
     color: $gray
+  }
+
+}
+
+#accordion-2 {
+  position: relative;
+  .head {
+    background-color: $light-gray;
+    color: #563e6e;
+    padding: 20px 30px;
+    cursor: pointer;
+    transition: 0.2s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+    .arrow{
+    color: $gray;
+    font-size: 2rem;
+    transition: 0.25s ease;
+    transform: rotate(-90deg);
+  }
+}
+
+#accordion-2 .head:hover .arrow{
+  opacity: 1;
+}
+
+#accordion-2 .active{
+  background-color: $purple;
+}
+
+#accordion-2 .arrow-animate{
+  transform: rotate(0deg);
+  opacity: 1;
+  color: $gray;
+}
+
+#accordion-2 .content{
+  background-color: $purple;
+  display: block;
+  padding: 1.5em 2em;
+  color: $gray;
+  p {
+    color: white;
+    font-size: 1rem;
   }
 
 }
