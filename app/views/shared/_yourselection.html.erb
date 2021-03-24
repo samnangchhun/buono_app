@@ -1,0 +1,19 @@
+<% recipe = locals[:recipe] %>
+<%= link_to recipe_path(recipe.id) do %>
+  <div class="best-rating">
+    <%= image_tag recipe.photo%>
+    <div class="recipe-title">
+      <%= link_to recipe.title, recipe_path(recipe.id) %>
+    </div>
+    <div class="rating">
+      <% recipe.rating_average.times do %>
+        <i class="fas fa-star"></i>
+      <% end %>
+      <% unless recipe.rating_average == 5 %>
+        <% (5 - recipe.rating_average).times do  %>
+          <i class="far fa-star"></i>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
