@@ -1,0 +1,65 @@
+[
+  {
+    "title": "Tuna pasta with tomatoes",
+    "instruction": "1 - Bring a large pot of salted water to a boil. Cook the pasta according to package instructions. Drain.\n2 - Add the olive oil, garlic, and chile flakes to a large sauté pan. Turn the heat to medium-low and slowly heat up until the garlic is fragrant and lightly colored, about 3 minutes.\n3 - Add the oregano, capers, olives, tomato paste, and diced tomatoes. Bring the sauce to a simmer and cook for 8-10 minutes, stirring occasionally.\n4 - Add the tuna and cook for another minute.\n5 - Toss in the cooked pasta.",
+    "cooking_time": 30,
+    "image": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/ba2168dc4b0b4c679177ec95a2f29781/BFV44742_PantryPasta_FB_Final.jpg?resize=300:*&output-format=webp&output-quality=auto",
+    "ingredients": ["pasta", "tuna", "garlic", "olive oil", "tomatoes"]
+  },
+  {
+    "title": "Cheesy Egg Toast",
+    "instruction": "1 - With a spoon, press down on the center of the bread to form a pocket.\n2 - Line the edges of the bread with butter, and crack an egg into the pocket.\n3 - Line the edges of the bread with shredded cheese.\n4 - Sprinkle on salt and pepper, and bake at 400°F (204°C) for 10-15 min. 10 min will have a runny yolk whereas 15 min will have a firmer yolk.",
+    "cooking_time": 20,
+    "image": "https://img.buzzfeed.com/video-api-prod/assets/bd2e246b2883465abaad8fb68739f6db/BFV4562_CheesyEggToast-Thumb1080.jpg?output-format=auto&output-quality=60&resize=600:*",
+    "ingredients": ["bread", "butter", "egg", "cheese"]
+  },
+  {
+    "title": "Teriyaki Chicken",
+    "instruction": "1 - Sear the chicken thighs evenly in a pan, then flip.\n 2 - Add the soy sauce and brown sugar, stirring and bringing to a boil.\n3 - Stir until the sauce has reduced and evenly glazes the chicken.\n4 - Serve with rice, if desired!",
+    "cooking_time": 27,
+    "image": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/1d47125afffa461a9711758f632306b8/BFV12484_3-IngredientDinners-FB1080SQ.jpg?output-format=auto&output-quality=60&resize=600:*",
+    "ingredients": ["chicken", "soy sauce", "brown sugar"]
+  },
+  {
+    "title": "Spaghetti With Cheese And Pepper",
+    "instruction": "1 - Bring a large pot of salted water to a boil. Cook the pasta for 1 minute less than the package instructs, until al dente. Save 1 cup (240 ml) pasta water, then drain.\n 2 - Heat a large sauté pan over medium heat. Add the olive oil, butter, and pepper, and stir to combine.\n3 - Stir in the reserved pasta water.\n4 - Toss in the cooked pasta. Reduce the heat to low.\n5 - Add the Parmesan and toss until the cheese is melted and the pasta is well-coated.",
+    "cooking_time": 30,
+    "image": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/57ae237823b4405f8910299960514033/BFV44742_PantryPasta_FB_Final.jpg?output-format=auto&output-quality=60&resize=600:*",
+    "ingredients": ["pasta", "olive oil", "butter", "black pepper", "cheese"]
+  },
+  {
+    "title": "Penne With Tomato Sauce Pasta",
+    "instruction": "1 - Heat a large sauté pan over medium heat. Add the olive oil and onion, and cook until the onion is translucent, 8-10 minutes.\n 2 - Add the chile flakes and garlic, and cook for another 2 minutes, until fragrant. Stir in tomatoes and simmer uncovered for 20 minutes.\n3 - Bring a large pot of salted water to a boil. Cook the pasta according to package instructions. Save ½ cup (120 ml) of pasta water, then drain.\n4 - Add the drained pasta to the sauce. Stir well, adding a little pasta water if needed to loosen the sauce. Season with salt to taste.",
+    "cooking_time": 20,
+    "image": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/75c25eb5538b4b3c91fdf71e747c1e84/BFV44742_PantryPasta_FB_Final.jpg?resize=300:*&output-format=webp&output-quality=auto",
+    "ingredients": ["pasta", "olive oil", "onion", "garlic", "chili"]
+  },
+  {
+    "title": "Grilled Cheese",
+    "instruction": "1 - On a cutting board, butter each piece of bread with butter on one side.\n 2 - Flip the bread over and spread each piece of bread with mayonnaise.\n3 - Place the cheese on the buttered side of one piece of bread. Top it with the second piece of bread, mayonnaise side out.\n4 - Heat a nonstick pan over medium low heat.\n5 - Place the sandwich on the pan, mayonnaise side down.\n6 - Cook for 3-4 minutes, until golden brown.\n7 - Using a spatula, flip the sandwich over and continue cooking until golden brown, about 2-3 minutes.",
+    "cooking_time": 30,
+    "image": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/0b87fc075ff04cd29ee4f739c7406ffe/finalFB.jpg?output-format=auto&output-quality=60&resize=600:*",
+    "ingredients": ["bread", "butter", "mayonnaise", "cheese"]
+  },
+  {
+    "title": "Banana Oat Smoothie",
+    "instruction": "1 - Add rolled oats to a blender and blend until the oats are the size of a fine crumb.\n 2 - Add the banana and milk and blend well.",
+    "cooking_time": 22,
+    "image": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/5eeb78d0e7af4e59867fa6c19ba01825/BFV32433_3-IngredientBreakfasts-FB1080.jpg?output-format=auto&output-quality=60&resize=600:*",
+    "ingredients": ["rolled oats", "banana", "milk"]
+  },
+  {
+    "title": "Meal-prep Pesto Chicken & Veggies",
+    "instruction": "1 - In a large pan, heat olive oil and add chicken thighs.\n 2 - Season with salt and pepper. When the chicken is completely cooked through, remove from pan.\n3 - Slice into strips, and set aside.Add green beans and cook until crisp tender.\n4 - Return the chicken strips to the pan, then add tomatoes and pesto. Stir until fully incorporated.\n5 - Serve immediately or divide into 4 food storage containers and store in the refrigerator. Can be kept refrigerated for up to 4 days.",
+    "cooking_time": 22,
+    "image": "https://img.buzzfeed.com/video-api-prod/assets/29f6cbb3a6c44658ba03d3421e8d2204/BFV13595_One-PanPestoChickenAndGreenBeans-ThumbTextless1080.jpg?output-format=auto&output-quality=60&resize=600:*",
+    "ingredients": ["olive oil", "chicken", "green beans", "tomato", "pesto"]
+  },
+  {
+    "title": "Mac & Cheese",
+    "instruction": "1 - In a large pot, bring the milk to a boil.\n 2 - Add the pasta and stir constantly until the pasta is cooked, about 10 minutes.\n3 - Turn off the heat, then add the cheddar. Stir until the cheese is melted and the pasta is evenly coated.",
+    "cooking_time": 15,
+    "image": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/6f1f6e8541404c6db1f0fa9c0d6de7f8/BFV12484_3-IngredientDinners-FB1080SQ.jpg?output-format=auto&output-quality=60&resize=600:*",
+    "ingredients": ["olive oil", "chicken", "green beans", "tomato", "pesto"]
+  }
+]
