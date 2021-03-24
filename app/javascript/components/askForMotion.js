@@ -13,6 +13,8 @@ const askForMotion = () => {
           .catch(e => {
             window.location.href = "/fridge"
           })
+      } else {
+        window.location.href = "/fridge"
       }
     })
   }
