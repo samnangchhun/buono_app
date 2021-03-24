@@ -35,29 +35,25 @@ puts 'users created'
 # end
 
 puts 'seeeding recipes'
+serialized_recipes = File.read("db/recipes.json")
+recipes = JSON.parse(serialized_recipes)
+# ingredients = Dir["db/jsons/ingredients/**/*.json"].sort
+# recipes = Dir["db/jsons/recipes/**/*.json"].sort
 
-ingredients = Dir["db/jsons/ingredients/**/*.json"].sort
-recipes = Dir["db/jsons/recipes/**/*.json"].sort
-
-recipes.each_with_index do |recipe_file, index|
-  recipe_serialized = File.read(recipe_file)
-  p recipe_json = JSON.parse(recipe_serialized)
-  recipe_ingredients_serialized = File.read(ingredients[index])
-  recipe_ingredients_json = JSON.parse(recipe_ingredients_serialized)
-
+recipes.each do |recipe_json|
   recipe = Recipe.new
   recipe.title = recipe_json['title']
-  recipe.instruction = recipe_json['instructions']
-  recipe.cooking_time = recipe_json['readyInMinutes']
+  recipe.instruction = recipe_json['instruction']
+  recipe.cooking_time = recipe_json['cooking_time']
   recipe.photo = recipe_json['image']
   recipe.save
 
-  recipe_ingredients_json['ingredients'].each do |element|
+  recipe_json['ingredients'].each do |element|
     ingredient = Ingredient.new
-    ingredient.name = element['name']
-    ingredient.photo = element['image']
-    ingredient.save unless Ingredient.find_by(name: element['name'])
-    RecipeIngredient.create(recipe: recipe, ingredient: Ingredient.find_by(name: element['name']))
+    ingredient.name = element
+    ingredient.photo = "#{element}.svg"
+    ingredient.save unless Ingredient.find_by(name: element)
+    RecipeIngredient.create(recipe: recipe, ingredient: Ingredient.find_by(name: element))
   end
 end
 
