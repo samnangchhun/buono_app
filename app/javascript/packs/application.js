@@ -34,6 +34,7 @@ import { dropDown } from '../components/profileDropDown';
 import { initShake } from '../components/initShake';
 import { askForMotion } from '../components/askForMotion';
 import { animation } from '../components/initAnimation';
+import { changeTitle } from '../components/initChangeTitle';
 
 window.addEventListener('load', () => {
   navigator.serviceWorker.register('/service-worker.js').then(registration => {
@@ -64,6 +65,7 @@ document.addEventListener('turbolinks:load', () => {
   dropDown();
   initShake();
   animation();
+  changeTitle();
 });
 
 

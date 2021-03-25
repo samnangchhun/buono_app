@@ -1,6 +1,6 @@
 <div class="fridge">
   <div class="fridge-content">
-    <h1>Your fridge is empty </h1>
+      <h1 class='fridge-title'>Your fridge is empty</h1>
     <form action='/recipes' id="shake-form">
       <div class="search-bar-fridge">
         <%= select_tag "ingredients[]", options_from_collection_for_select(Ingredient.all, :id, :name), class: 'select2', multiple: 'multiple' %>

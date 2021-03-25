@@ -9,6 +9,7 @@
     width: 80px;
     height: 80px;
     border-radius: 50%;
+    border: 2px solid white;
     }
     // background: gray;
     // padding: 1rem;
@@ -18,11 +19,11 @@
     // position: relative;
   }
   i {
-    color: pink;
+    color: $purple;
     position:absolute;
     top: 138px;
     right: 147px;
-    padding: 3px 3px;
+    padding: 2px 2px;
     background: white;
     border-radius: 50%;
   }
@@ -38,11 +39,11 @@
   span {
     padding: 4px 8px;
     font-size: 1rem;
-    font-weight: 400;
+    font-weight: 600;
     color: $gray;
 
     &.active {
-      color: $purple;
+      color: $gray;
     }
   }
 }
@@ -73,7 +74,7 @@
     position: absolute;
     top: 12px;
     right: 14px;
-    width: 80px;
+    width: 100px;
     z-index: 3;
     .bookmarks-recipe-time {
       font-size: 0.7rem;
@@ -81,12 +82,13 @@
       border: 1px solid white;
       color: $orange;
       border-radius: 23px;
-      font-weight: 300;
+      font-weight: 600;
       background: white;
 
     }
     .fa-bookmark {
-      color: white
+      color: $orange;
+      font-size: 2.2rem;
     }
   }
   .bookmarks-recipe-title-raiting {
