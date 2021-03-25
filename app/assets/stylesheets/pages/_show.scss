@@ -72,6 +72,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+      h3 {
+      border-bottom: 10px solid $orange;
+      padding-bottom: 6px;
+    }
   }
     .arrow{
     color: $gray;
@@ -87,6 +91,7 @@
 
 #accordion-1 .active{
   background-color: $orange;
+  border-radius: 0 8em 8em 0;
 }
 
 #accordion-1 .arrow-animate{
@@ -97,7 +102,7 @@
 
 #accordion-1 .content{
   background-color: $light-gray;
-  display: block;
+  display: none;
   padding: 1.5em 2em;
   color: $gray;
   ul {
@@ -133,6 +138,7 @@
 
 #accordion-2 .active{
   background-color: $purple;
+  border-radius: 0 8em 8em 0;
 }
 
 #accordion-2 .arrow-animate{
@@ -143,7 +149,7 @@
 
 #accordion-2 .content{
   background-color: $purple;
-  display: block;
+  display: none;
   padding: 1.5em 2em;
   color: $gray;
   p {

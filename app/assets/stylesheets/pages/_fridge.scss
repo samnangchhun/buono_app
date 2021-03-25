@@ -47,9 +47,36 @@
 // modal
 
 .shake-modal {
-  background-image: asset-url('backgroud_modal.svg');
-  background-repeat: no-repeat;
-  background-position: center;
+  .image {
+    width: 100px;
+    height: 160px;
+    font-size: 40px;
+    text-align: center;
+    transform-origin: bottom center;
+    animation: 3s rotate infinite;
+    position: absolute;
+    top: 35%;
+    left: 38%;
+    font-size: 100px;
+    .fa-egg {
+      color: #eec0c6;
+    }
+    .fa-lemon {
+      color: yellow,
+    }
+    .fa-bacon {
+      color: #A40606,
+    }
+    .fa-cheese {
+      color: #ffa600
+    }
+    // -webkit-transform: translateX(-18%) translateY(50%);
+
+  }
+
+  // background-image: asset-url('backgroud_modal.svg');
+  // background-repeat: no-repeat;
+  // background-position: center;
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1050; /* Sit on top */
@@ -58,8 +85,7 @@
   width: 100vw; /* Full width */
   height: 100vh; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: $orange; /* Fallback color */
-  background-color: $orange; /* Black w/ opacity */
+  background-color: $orange; /* Fallback color */ /* Black w/ opacity */
 }
 
 
@@ -161,6 +187,28 @@
 
 
 
+// @keyframes rotate{
+//   0% {
+//     transform: rotate(90deg);
+//   }
+//   10% {
+//     opacity: 0;
+//   }
+//   35% {
+//     transform: rotate(0deg);
+//     opacity: 1;
+//   }
+//   65% {
+//     transform: rotate(0deg);
+//     opacity: 1;
+//   }
+//   80% {
+//     opacity: 0;
+//   }
+//   100% {
+//     transform: rotate(-90deg);
+//   }
+// }
 
 
 
