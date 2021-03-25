@@ -3,7 +3,7 @@
       <h1 class='fridge-title'>Your fridge is empty</h1>
     <form action='/recipes' id="shake-form">
       <div class="search-bar-fridge">
-        <%= select_tag "ingredients[]", options_from_collection_for_select(Ingredient.all, :id, :name), class: 'select2', multiple: 'multiple' %>
+        <%= select_tag "ingredients[]", options_from_collection_for_select(Ingredient.all, :id, :name), class: 'select2', multiple: 'multiple'%>
         <button class= "button-add" type='submit'><%= image_tag 'search.svg', class: "search-icon" %></i></button>
       </div>
     </form>
