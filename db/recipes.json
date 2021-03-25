@@ -65,8 +65,22 @@
   {
     "title": "Pesto Chicken Bake",
     "instruction": "1 - Preheat oven to 400˚F (200˚C).\n 2 - Place chicken breast in a baking dish. Season chicken with salt and pepper, to taste.\n3 - Spread pesto on each chicken breast.\n4 - Layer tomatoes on top of the chicken.\n5 - Top with mozzarella cheese.\n6 - Bake for 40 minutes.",
-    "cooking_time": 50,
+    "cooking_time": 55,
     "image": "https://img.buzzfeed.com/thumbnailer-prod-us-east-1/8f14df7bed8f4a2ba98f017f058b9a8f/BFV9176_Chicken_Bake_4_Ways_FB1080SQ.jpg?resize=300:*&output-format=webp&output-quality=auto",
     "ingredients": ["chicken", "pasto", "tomato", "mozzarella"]
+  },
+  {
+    "title": "One-pan Honey Garlic Chicken",
+    "instruction": "1 - Preheat oven to 400˚F (200˚C).\n 2 - Season chicken thighs with salt and pepper.\n3 - Melt 1 tablespoon butter in a large ovenproof skillet over medium heat. Add chicken, skin-side down, and sear both sides until golden brown. (The skin side will take much longer, in order to properly render the fat and crisp up the skin.)\n4 - Remove chicken thighs and set aside. Pour out any excess fat, but leave some in for the sauce.\n5 - Add garlic, stir until fragrant, then add brown sugar, honey, thyme, and oregano, and stir. Reduce heat to low.\n6 - Return chicken to the skillet. Coat the chicken in the sauce.\n7 - Add green beans to skillet.\n8 - Bake for 25 minutes or until chicken is cooked through.",
+    "cooking_time": 52,
+    "image": "https://img.buzzfeed.com/video-api-prod/assets/ba8b9b30531c4058956bbe5c1296bbc8/Thumb_A_FB.jpg?resize=300:*&output-format=webp&output-quality=auto",
+    "ingredients": ["chicken", "butter", "garlic", "brown sugar", "honey", "oregano", "green beans"]
+  },
+  {
+    "title": "Lemon Chicken And Asparagus Stir-Fry",
+    "instruction": "1 - Season the chicken with the salt and pepper and fry with the olive oil. After a few minutes, add the garlic.\n 2 - Fry the chicken with the garlic for another few minutes, then add the asparagus, lemon zest, and lemon juice.\n3 - Stir again, before mixing in the soy sauce.\n4 - Serve with rice and sprinkle with lemon zest on top.",
+    "cooking_time": 25,
+    "image": "https://img.buzzfeed.com/video-api-prod/assets/2ae24afe483c4568b76f487777fc1739/BFV12624_LemonChickenandAsparagusStirFry-ThumbTextless1080.jpg?resize=300:*&output-format=webp&output-quality=auto",
+    "ingredients": ["olive oil", "chicken", "garlic", "asparagus", "soy sauce", "lemon"]
   }
 ]
