@@ -26,10 +26,14 @@
       <div class="recipe-ingredients">
         <ul>
           <% recipe.ingredients.each do |ingredient| %>
-          <% if !params[:ingredients].nil? && params[:ingredients].include?(ingredient.id.to_s) %>
+            <% if !params[:ingredients].nil? %>
+              <% if params[:ingredients].include?(ingredient.id.to_s) %>
             <!-- <li class=<%#= params[:ingredients].include?(ingredient.id.to_s) ? "match" : "unmatch" unless params[:ingredients].nil? %>><%= ingredient.name %></li> -->
-            <li> <%= ingredient.name %> </li>
-          <% end %>
+                <li> <%= ingredient.name %> </li>
+              <% end %>
+            <% else %>
+              <li> <%= ingredient.name %></li>
+            <% end %>
           <% end %>
         </ul>
       </div>
