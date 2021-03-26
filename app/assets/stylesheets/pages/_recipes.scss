@@ -9,12 +9,16 @@
   ul li {
     border: 1px solid $purple;
     border-radius: 14px;
-    background-color: transparent;
-    color: #453E3E;
+    background-color: $purple;
+    color: white;
     margin: 3px;
     padding-left: 1em;
     padding-right: 1em;
     text-align: left;
+    font-weight: 600;
+  }
+  p {
+    font-weight: 600;
   }
 }
 
