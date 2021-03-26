@@ -28,6 +28,7 @@
       font-size: .7rem;
       border-radius: 1em;
       font-weight: 600;
+      box-shadow: 0 0 1px rgb(200,200,200);
     }
 
     .recipe-rating {
@@ -36,6 +37,7 @@
       bottom: .5em;
       left: 60%;
       font-size: .7rem;
+      text-shadow: 0 0 1px rgb(100,100,100);
     }
   }
 
@@ -51,6 +53,7 @@
   .recipe-right {
     min-height: 140px;
     max-height: 140px;
+    margin-top: -4px;
   }
 
   .recipe-ingredients {

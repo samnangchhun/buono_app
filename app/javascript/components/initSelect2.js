@@ -11,10 +11,12 @@ const initSelect2 = () => {
   // });
   $searchBar.on("select2:selecting", function(e) {
     const title = document.querySelector('.fridge-title');
+    title.classList.add('shake');
     title.innerHTML = `Shake your phone`;
   });
   $searchBar.on("select2:clear", function(e) {
     const title = document.querySelector('.fridge-title');
+    title.classList.remove('shake');
     title.innerHTML = `Your fridge is empty`;
   });
   $searchBar.on("select2:unselect", function(e) {

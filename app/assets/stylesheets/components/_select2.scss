@@ -1,6 +1,7 @@
 .select2-container--default .select2-selection--multiple {
   border-radius: 20px;
   border: 0;
+  box-shadow: 0 0 2px rgb(200,200,200);
 }
 
 .select2-container--default.select2-container--focus .select2-selection--multiple{
@@ -29,4 +30,8 @@ border-right: 1px solid $purple;
   padding: 0;
   top: 40px;
   position: absolute;
+}
+
+.select2-selection {
+  padding-left: 6px;
 }

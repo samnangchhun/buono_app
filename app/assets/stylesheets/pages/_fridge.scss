@@ -9,12 +9,19 @@
 
 
   .fridge-content > h1 {
-    font-size: 24px;
+    font-size: 30px;
     font-weight: 600;
     margin-top: 60px;
     margin-bottom: 50px;
     text-align: center;
     padding-left: 0;
+    color: $gray;
+    &.shake {
+      animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+      transform: translate3d(0, 0, 0);
+      color: $gray;
+      font-size: 30px;
+    }
   }
 }
 
@@ -56,8 +63,8 @@
     animation: 3s rotate infinite;
     position: absolute;
     top: 35%;
-    left: 38%;
-    font-size: 100px;
+    left: 36%;
+    font-size: 120px;
     .fa-egg {
       color: #eec0c6;
     }
@@ -88,7 +95,23 @@
   background-color: $orange; /* Fallback color */ /* Black w/ opacity */
 }
 
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
 
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
 
 
 

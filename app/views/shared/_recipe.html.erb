@@ -24,6 +24,7 @@
         <%= link_to recipe.title, recipe_path(recipe.id) %>
       </div>
       <div class="recipe-ingredients">
+        <p>Matched ingredients</p>
         <ul>
           <% recipe.ingredients.each do |ingredient| %>
             <% if !params[:ingredients].nil? %>
