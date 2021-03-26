@@ -13,10 +13,10 @@ const initSelect2 = () => {
     const title = document.querySelector('.fridge-title');
     title.classList.add('shake');
     title.innerHTML = `Shake your phone`;
+    setTimeout(() =>  title.classList.remove('shake'), 820);
   });
   $searchBar.on("select2:clear", function(e) {
     const title = document.querySelector('.fridge-title');
-    title.classList.remove('shake');
     title.innerHTML = `Your fridge is empty`;
   });
   $searchBar.on("select2:unselect", function(e) {
