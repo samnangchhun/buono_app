@@ -57,25 +57,33 @@
   .image {
     width: 100px;
     height: 160px;
-    font-size: 40px;
+    font-size: 50px;
     text-align: center;
     transform-origin: bottom center;
     animation: 3s rotate infinite;
-    position: absolute;
-    top: 35%;
-    left: 36%;
-    font-size: 120px;
     .fa-egg {
       color: #eec0c6;
+      top: 48%;
+      left: 45%;
+      position: absolute;
     }
     .fa-lemon {
-      color: yellow,
-    }
-    .fa-bacon {
-      color: #A40606,
+      color: yellow;
+      top: 43%;
+      left: 34%;
+      position: absolute;
     }
     .fa-cheese {
-      color: #ffa600
+      color: #ffa600;
+      top: 38%;
+      left: 45%;
+      position: absolute;
+    }
+    .fa-bacon {
+      color: #A40606;
+      top: 43%;
+      left: 56%;
+      position: absolute;
     }
     // -webkit-transform: translateX(-18%) translateY(50%);
 
