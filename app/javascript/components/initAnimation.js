@@ -10,7 +10,7 @@ const animation = () => {
 
       changeImage(counter);
       counter++;
-    }, 200);
+    }, 500);
 
     // Set the percentage off
   });

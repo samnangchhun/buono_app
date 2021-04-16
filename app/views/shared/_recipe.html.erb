@@ -1,5 +1,8 @@
 <% recipe = locals[:recipe] %>
 <%= link_to recipe_path(recipe.id) do %>
+  <div class="recipe-title-index">
+    <h6><%= recipe.title %></h6>
+  </div>
   <div class="recipe">
 
     <div class="recipe-left">
@@ -20,9 +23,9 @@
     </div>
 
     <div class="recipe-right">
-      <div class="recipe-title">
+ <!--       <div class="recipe-title">
         <%= link_to recipe.title, recipe_path(recipe.id) %>
-      </div>
+      </div> -->
       <div class="recipe-ingredients">
         <p>Matched ingredients</p>
         <ul>
@@ -32,10 +35,13 @@
             <!-- <li class=<%#= params[:ingredients].include?(ingredient.id.to_s) ? "match" : "unmatch" unless params[:ingredients].nil? %>><%= ingredient.name %></li> -->
                 <li> <%= ingredient.name %> </li>
               <% end %>
-            <% else %>
-              <li> <%= ingredient.name %></li>
             <% end %>
           <% end %>
+            <% if params[:ingredients].nil? %>
+              <% recipe.ingredients[0..3].each do |ingredient| %>
+                <li> <%= ingredient.name %></li>
+              <% end %>
+            <% end %>
         </ul>
       </div>
     </div>
