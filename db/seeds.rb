@@ -43,7 +43,7 @@ recipes = JSON.parse(serialized_recipes)
 # recipes = Dir["db/jsons/recipes/**/*.json"].sort
 
 recipes.each do |recipe_json|
-  # next if !(Recipe.select {|e| e['title'] == recipe_json['title']}).empty?
+  next if !Recipe.find_by(title: recipe_json['title']).nil?
   # p recipe_json['instruction']
   # p recipe_json['instruction']
   steps = recipe_json['instruction']&.map {|step| step + "\n"}.join
@@ -54,7 +54,7 @@ recipes.each do |recipe_json|
   recipe.doses = doses
   recipe.cooking_time = recipe_json['cooking_time']
   recipe.photo = recipe_json['image']
-  recipe.save if Recipe.find_by(title: recipe_json['title']).nil?
+  recipe.save
 
   recipe_json['ingredients'].each do |element|
     ingredient = Ingredient.new

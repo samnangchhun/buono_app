@@ -8,7 +8,7 @@ class RecipesController < ApplicationController
       @recipes = Recipe.match(params[:ingredients])
       # .map { |recipe| recipe[:recipe] }
     else
-      @recipes = Recipe.all
+      @recipes = Recipe.all.sort_by { |recipe| recipe.cooking_time }
     end
   end
 
