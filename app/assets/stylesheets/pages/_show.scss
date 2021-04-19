@@ -23,14 +23,18 @@
 .ingridients-container {
   background-color: $light-gray;
   padding-top: 1.5em;
+  .d-flex{
+    align-items: baseline;
+  }
 
   h2 {
-    font-weight: 600;
+    font-weight: 400;
     font-size: 1.5rem;
     color: $gray;
     padding-left: .5em;
     max-width: 250px;
     margin-bottom: 30px;
+    font-family: 'RocknRoll One', sans-serif;
   }
 
   h6 {
@@ -53,7 +57,7 @@
   width: 100px;
   justify-content: space-between;
   i {
-    text-shadow: 0 0 1px rgb(150,150,150);
+    text-shadow: 0 0 1px $lightgreen;
   }
   .recipe-time {
     padding: .65em 1em;
@@ -70,6 +74,7 @@
   }
   .bookmark-recipe > a > i {
     font-size: 30px;
+    color: $darkGreen;
   }
 }
 
@@ -98,7 +103,7 @@
 }
 
 #accordion-1 .active{
-  background-color: $orange;
+  background-color: $yellow;
 }
 
 #accordion-1 .arrow-animate{
@@ -149,7 +154,7 @@
 }
 
 #accordion-2 .active{
-  background-color: $purple;
+  background-color: $lightgreen;
 }
 
 #accordion-2 .arrow-animate{
@@ -159,7 +164,7 @@
 }
 
 #accordion-2 .content{
-  background-color: $purple;
+  background-color: $darkGreen;
   display: none;
   padding: 1.5em 2em;
   color: $gray;
