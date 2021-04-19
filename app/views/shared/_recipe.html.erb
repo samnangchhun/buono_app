@@ -27,7 +27,9 @@
         <%= link_to recipe.title, recipe_path(recipe.id) %>
       </div> -->
       <div class="recipe-ingredients">
-        <p>Matched ingredients</p>
+        <% if !params[:ingredients].nil? %>
+          <p>Matched ingredients</p>
+        <% end %>
         <ul>
           <% recipe.ingredients.each do |ingredient| %>
             <% if !params[:ingredients].nil? %>
@@ -38,7 +40,7 @@
             <% end %>
           <% end %>
             <% if params[:ingredients].nil? %>
-              <% recipe.ingredients[0..3].each do |ingredient| %>
+              <% recipe.ingredients[0..5].each do |ingredient| %>
                 <li> <%= ingredient.name %></li>
               <% end %>
             <% end %>
