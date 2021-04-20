@@ -15,10 +15,22 @@
     <% if user_signed_in? %>
       <div class="User-area">
         <div class="User-avtar">
-         <i class="fas fa-user-circle"></i>
+          <i class="fas fa-bars"></i>
         </div>
           <ul class="User-Dropdown">
-            <li><%= link_to 'My profile', bookmarks_path %></li>
+            <div class="bookmarks-profile">
+              <% if current_user.photo.attached? %>
+                <%= cl_image_tag current_user.photo.key,  width: 150, height: 150, crop: :thumb, gravity: :face %>
+              <% else %>
+                <i class="fas fa-user"></i>
+              <% end %>
+            </div>
+            <li><%= current_user.first_name %></li>
+            <% if !current_user.address.nil? %>
+              <li><%= current_user.address %></li>
+            <% end %>
+            <li><%= link_to 'My cookbook', bookmarks_path %></li>
+            <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
             <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
           </ul>
       </div>

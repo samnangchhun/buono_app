@@ -9,6 +9,7 @@
 
 
   .fridge-content > h1 {
+    font-family: 'Permanent Marker', cursive;
     font-size: 30px;
     font-weight: 600;
     margin-top: 60px;
@@ -31,7 +32,7 @@
   display: flex;
 
   .button-add {
-
+    box-shadow: 0 0 2px rgb(240,240,240);
     border: none;
     background-color: white;
     width: 59px;
@@ -57,25 +58,24 @@
   .image {
     width: 100px;
     height: 160px;
-    font-size: 40px;
+    font-size: 80px;
     text-align: center;
     transform-origin: bottom center;
     animation: 3s rotate infinite;
+    top: 50%;
+    left: 50%;
     position: absolute;
-    top: 35%;
-    left: 36%;
-    font-size: 120px;
     .fa-egg {
       color: #eec0c6;
     }
     .fa-lemon {
-      color: yellow,
-    }
-    .fa-bacon {
-      color: #A40606,
+      color: yellow;
     }
     .fa-cheese {
-      color: #ffa600
+      color: #ffa600;
+    }
+    .fa-bacon {
+      color: #A40606;
     }
     // -webkit-transform: translateX(-18%) translateY(50%);
 

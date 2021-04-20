@@ -16,7 +16,7 @@
 
 body {
   padding-bottom: 64px;
-  background-color: rgb(220,220,220);
+  background-color: $light-gray;
 }
 
 h1 {
@@ -25,6 +25,7 @@ h1 {
   font-weight: 600;
   padding-left: 1em;
   padding-top: 1em;
+  font-family: 'Permanent Marker', cursive;
 }
 
 a {

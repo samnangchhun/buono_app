@@ -1,21 +1,15 @@
 
 <div>
-  <div class="bookmarks-container">
-    <div class="bookmarks-profile">
-      <img src="https://ca.slack-edge.com/T02NE0241-U01KRCZFLP4-d3c5edcae121-121" alt="profile-picture">
-    </div>
-    <i class="fas fa-plus-circle"></i>
-  </div>
-
-  <div class="bookmarks-category">
+  <h1 class='text-center pl-0'>Cookbook</h1>
+<!--   <div class="bookmarks-category">
     <span class="active">Your bookmark</span>
-<!--     <span >Your selection</span> -->
-  </div>
+    <span >Your selection</span>
+  </div> -->
 
   <div class="bookmarks-list-container">
     <div class="bookmarks-cards-container active">
       <% if @bookmarks.empty? %>
-        <h3>You dont have any bookmarks</h3>
+        <h3>Empty Cookbook</h3>
           <div class="empty_bookrmark">
             <%= link_to "check some recipes", recipes_path %>
           </div>

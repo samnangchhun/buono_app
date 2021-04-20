@@ -21,10 +21,12 @@ class Recipe < ApplicationRecord
     recipes = recipes.map { |recipe| recipe.id }
     priorities = recipes.uniq.map { |recipe| { recipe: Recipe.find_by(id: recipe), matching_ingredients: recipes.count(recipe) } }
     priorities = priorities.map do |hash|
+      # next if hash[:matching_ingredients] < 3
+
       {
         matching_ingredients: hash[:matching_ingredients],
         recipes: priorities.map do |recipe|
-          recipe[:recipe] if recipe[:matching_ingredients] == hash[:matching_ingredients]
+          recipe[:recipe] if recipe[:matching_ingredients] == hash[:matching_ingredients] && hash[:matching_ingredients] > 1
         end.compact
       }
     end.uniq

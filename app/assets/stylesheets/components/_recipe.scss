@@ -1,3 +1,13 @@
+.recipe-title-index {
+  text-align: center;
+  h6 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-top: 30px;
+  font-family: 'RocknRoll One', sans-serif;
+  }
+}
+
 .recipe {
   margin: 2em 0;
   display: grid;
@@ -26,9 +36,9 @@
       background-color: white;
       color: $orange;
       font-size: .7rem;
-      border-radius: 1em;
+      border-radius: 0 1em 0 1em;
       font-weight: 600;
-      box-shadow: 0 0 1px rgb(200,200,200);
+      box-shadow: 0 0 1px rgb(220,220,220);
     }
 
     .recipe-rating {
@@ -66,7 +76,7 @@
       margin-top: 0;
       margin-bottom: 1rem;
       line-height: 1.5em;
-      font-size: .7rem;
+      font-size: .6rem;
       list-style: none;
       padding-left: 0;
     }
