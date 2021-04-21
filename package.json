@@ -1,7 +1,4 @@
 {
-  "scripts": {
-     "start": "node index.js"
-  },
   "name": "buono_app",
   "private": true,
   "dependencies": {

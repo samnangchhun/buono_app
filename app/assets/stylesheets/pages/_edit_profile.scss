@@ -9,15 +9,12 @@
     text-align: center;
     margin-bottom: 18px;
   }
-  .form-actions {
+  .btn-profile {
     background-color: $purple;
     text-align: center;
     border-radius: 8px;
-    opacity: 0.8;
-  }
-  .form-actions .btn {
+    width: 100%;
     color: white;
     font-weight: 600;
-
   }
 }
