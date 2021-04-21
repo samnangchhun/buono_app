@@ -4,7 +4,7 @@ require 'open-uri'
 
 url = "https://api.spoonacular.com/recipes/random?number=100&apiKey=#{ENV['SPOONACULAR_KEY']}"
 
-filepath = '../../db/recipes.json'
+filepath = 'recipes.json'
 serialized_present_recipe = File.read(filepath)
 present_recipe = JSON.parse(serialized_present_recipe)
 
@@ -42,16 +42,6 @@ end
 File.open(filepath, 'wb') do |file|
   file.write(JSON.generate(present_recipe))
 end
-
-puts 'seeding 5 users...'
-
-User.create(email: 'fra@mail.com', password: '123456')
-User.create(email: 'mich@mail.com', password: '123456')
-User.create(email: 'sam@mail.com', password: '123456')
-User.create(email: 'edo@mail.com', password: '123456')
-User.create(email: 'lara@mail.com', password: '123456')
-
-puts 'users created'
 
 
 puts 'seeeding recipes'
